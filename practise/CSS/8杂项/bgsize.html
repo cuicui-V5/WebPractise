@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      .main {
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+        margin: 20px;
+        background-color: skyblue;
+        box-shadow: 2px 2px 2px black;
+        transition: background-color, box-shadow 0.1s;
+      }
+      .main:hover h1 {
+        box-shadow: 5px 5px 5px 3px black;
+        border-radius: 25px;
+        text-shadow: 2px 3px 5px black, 2px 3px 5px blue;
+        background-color: pink;
+      }
+      .main h1 {
+        transition: background-color, box-shadow,
+          text-shadow 0.1s;
+      }
+
+      .text {
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        background-color: pink;
+        transition: 0.2s;
+      }
+
+      .text:hover {
+        width: 500px;
+        background-color: skyblue;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      .sjx {
+        border: 40px solid;
+        border-color: skyblue pink blue red;
+        width: 0;
+        height: 0;
+        transform: rotate();
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>&nbsp &nbsp abcdefg</h1>
+    </div>
+    <div class="main">
+      <h1>&nbsp &nbsp abcdefg</h1>
+    </div>
+    <div class="main">
+      <h1>&nbsp &nbsp abcdefg</h1>
+    </div>
+    <div class="main">
+      <h1>&nbsp &nbsp abcdefg</h1>
+    </div>
+    <div class="text">
+      <p>
+        ceui 测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui
+        测试ceui 测试ceui 测试ceui 测试ceui 测试ceui 测试
+      </p>
+    </div>
+
+    <table border="1px">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+    <br /><br />
+    <div class="sjx"></div>
+  </body>
+</html>
