@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top{
+            width: 300px;
+            /* height: 300px; */
+            background-color: #ccc;
+        }
+        .top .l{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        .top .r{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        .bottom{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+        }
+       / .top::after{
+            /* 单伪元素消除法 */
+            content: ' ';
+            display: block;
+            clear: both;
+            /* 为了兼容性添加 */
+
+            height: 0;
+            visibility: hidden;
+        }
+        /* .clearfix{
+            clear: both;
+        } */
+
+        .clearfix::after,
+        .clearfix::before{
+            content: '';
+            display: table;
+        }
+        .clearfix::after{
+            clear: both;
+        }
+        .top{
+            overflow: hidden;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="top">
+        <div class="l"></div>
+        <div class="r"></div>
+        <!-- <div class="clearfix"></div> -->
+    </div>
+    <div class="bottom abc">1213213213</div>
+</body>
+</html>
