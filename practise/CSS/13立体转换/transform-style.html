@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.cube {
+				perspective: 1000px;
+				position: relative;
+				margin: 100px auto;
+				width: 200px;
+				height: 200px;
+				transform-style: preserve-3d;
+				transition: all 4s;
+			}
+			.cube div {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+			}
+			.cube .front {
+				transform: translateZ(100px);
+
+				background-color: #f00;
+				background-image: url(./2.jpg);
+				background-size: cover;
+			}
+			.cube .left {
+				background-color: #00f;
+				transform: translateX(-100px) rotateY(90deg);
+				background-image: url(./2.jpg);
+				background-size: cover;
+			}
+			.cube .right {
+				background-color: #0f0;
+				transform: translateX(100px) rotateY(-90deg);
+				background-image: url(./2.jpg);
+				background-size: cover;
+			}
+			.cube .back {
+				transform: translateZ(-100px);
+
+				background-color: rgb(255, 0, 191);
+				background-image: url(./xjp.jpg);
+				background-size: cover;
+			}
+			.cube:hover {
+				transform: rotateY(100turn);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cube">
+			<div class="front">前面</div>
+			<div class="back">后面</div>
+			<div class="left">左面</div>
+			<div class="right">右面</div>
+		</div>
+	</body>
+</html>

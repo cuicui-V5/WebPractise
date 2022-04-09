@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			ul,
+			li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.nav {
+				width: 630px;
+				margin: 200px auto;
+
+			}
+			.nav li {
+                float: left;
+				width: 200px;
+				height: 100px;
+				margin-right: 10px;
+			}
+			.nav li a {
+                display: inline-block;
+			}
+			.nav li .cube {
+				position: relative;
+				width: 200px;
+				height: 100px;
+				transform-style: preserve-3d;
+				transition: all 0.4s;
+			}
+			.nav li .cube .front {
+				position: absolute;
+				width: 200px;
+				height: 100px;
+				background-color: pink;
+                transform: translateZ(50px);
+			}
+			.nav li .cube .top {
+				position: absolute;
+				width: 200px;
+				height: 100px;
+				background-color: skyblue;
+                transform: rotateX(90deg) translateZ(50px);
+			}
+			.nav li:hover .cube {
+				transform: rotateX(-90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="cube">
+							<div class="front">前面</div>
+							<div class="top">上面</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="cube">
+							<div class="front">前面</div>
+							<div class="top">上面</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="cube">
+							<div class="front">前面</div>
+							<div class="top">上面</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
