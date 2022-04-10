@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.continer {
+				width: 720px;
+				height: 135px;
+				margin: 100px auto;
+
+				border: 2px solid #000;
+                overflow: hidden;
+			}
+			.continer .img {
+				width: 3360px;
+
+				animation: run 10s linear infinite;
+			}
+
+			.continer img {
+				height: 135px;
+				float: left;
+			}
+			@keyframes run {
+				from {
+					transform: translate(0, 0);
+				}
+				to {
+					transform: translate(-1680px, 0);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="continer">
+			<div class="img">
+				<img src="./images/1.jpg" alt="" />
+				<img src="./images/2.jpg" alt="" />
+				<img src="./images/3.jpg" alt="" />
+				<img src="./images/4.jpg" alt="" />
+				<img src="./images/5.jpg" alt="" />
+				<img src="./images/6.jpg" alt="" />
+				<img src="./images/7.jpg" alt="" />
+				<img src="./images/1.jpg" alt="" />
+				<img src="./images/2.jpg" alt="" />
+				<img src="./images/3.jpg" alt="" />
+				<img src="./images/4.jpg" alt="" />
+				<img src="./images/5.jpg" alt="" />
+				<img src="./images/6.jpg" alt="" />
+				<img src="./images/7.jpg" alt="" />
+			</div>
+		</div>
+	</body>
+</html>
