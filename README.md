@@ -37,3 +37,4 @@
 24. 4.4 平面转换 translate rotate scale transform-origin 坐标原点 多重转换[https://www.bilibili.com/video/BV1xq4y1q7jZ?p=17](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=17)
 24. 4/5 平面转换 渐变 案例 [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=21](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=21)
 24. 4/9 空间转换 空间位移 空间旋转 空间缩放 透视效果 perspective 3d导航案例 [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=40](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=40)
+25. 4/10 动画 两个状态的动画 多个状态的动画 动画执行完毕状态 动画循环infinite  速度曲线 linear steps 分步动画 反向 暂停动画 精灵图动画 多组动画 无缝动画 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=50
