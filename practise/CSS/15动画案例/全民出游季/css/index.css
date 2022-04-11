@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+	background-image: url(../images/f1_1.jpg) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 img {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -85%);
+}
+.deco .balloon {
+	position: fixed;
+	left: 35%;
+	top: 15%;
+	animation: ani_ball 1s infinite linear alternate;
+}
+.deco .lu {
+	position: fixed;
+	right: 35%;
+	top: 4%;
+}
+.deco .cloud {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	top: 0%;
+}
+.cloud > img {
+	animation: ani_c 1s infinite linear alternate;
+}
+.deco .c1 {
+	position: absolute;
+	left: 25%;
+	top: 20%;
+}
+.deco .c2 {
+	position: absolute;
+	left: 40%;
+	top: 3%;
+}
+.deco .c3 {
+	position: absolute;
+	left: 70%;
+	top: 15%;
+}
+.deco .tips {
+	position: fixed;
+	left: 50%;
+	bottom: 35%;
+	transform: translate(-50%);
+}
+.deco .tips > img {
+	width: 70px;
+
+	margin-right: 50px;
+}
+.deco .tips > img:nth-child(1) {
+    animation: ani_tips 1s infinite linear alternate;
+}
+.deco .tips > img:nth-child(2) {
+    animation: ani_tips 1s 0.2s infinite  alternate;
+}
+.deco .tips > img:nth-child(3) {
+    animation: ani_tips 1s 0.4s infinite  alternate;
+}
+.deco .tips > img:nth-child(4) {
+    animation: ani_tips 1s 0.6s infinite  alternate;
+}
+
+
+
+@keyframes ani_ball {
+	from {
+		transform: translateY(-20%);
+	}
+	to {
+		transform: translateY(20%);
+	}
+}
+@keyframes ani_c {
+	from {
+		transform: translateX(-50px);
+	}
+	to {
+		transform: translateX(50px);
+	}
+}
+@keyframes ani_tips {
+    from {
+        transform: translateY(-20%);
+    }
+    to {
+        transform: translateY(20%);
+    }
+}
