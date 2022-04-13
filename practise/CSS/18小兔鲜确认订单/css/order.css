@@ -1,17 +1,22 @@
 body {
 	background-color: #f7f7f7;
+	font-size: 12px;
 }
 
 .main {
 	padding: 12px 12px 80px;
 }
 
-.main .user_info {
+.panel {
+	margin-bottom: 12px;
 	padding: 12px;
+	border-radius: 6px;
+	background-color: #fff;
+}
+.main .user_info {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #fff;
 }
 
 .user_info .location {
@@ -26,13 +31,11 @@ body {
 }
 .user_info .info {
 	flex: 1;
-    margin-left: 12px;
-
+	margin-left: 12px;
 }
 .user_info .info .name {
-    font-size: 15px;
+	font-size: 15px;
 }
-
 
 .user_info .more {
 	width: 44px;
@@ -40,6 +43,83 @@ body {
 	text-align: center;
 	line-height: 44px;
 }
+.goods {
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+}
+.goods img {
+	width: 85px;
+	border-radius: 6px;
+}
+.goods .info {
+	margin-left: 12px;
+	flex: 1;
+}
+
+
+.goods .info .tag {
+    display: inline-block;
+	padding: 4px;
+	background-color: #f7f7f8;
+	color: #888888;
+}
+.goods .info .price .price_now {
+	font-size: 9px;
+	color: #cf4444;
+}
+.goods .info .price .price_now span {
+	font-size: 16px;
+}
+.goods .info .price .price_old {
+	font-size: 9px;
+}
+.goods .info .price .price_old span {
+	font-size: 12px;
+	text-decoration: line-through;
+}
+
+.goods .number {
+	width: 44px;
+	height: 44px;
+
+	font-size: 12px;
+	text-align: center;
+	line-height: 44px;
+}
+
+.rest p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+}
+.rest p:nth-child(2){
+
+    justify-content: flex-start;
+}
+.rest .mjbz .mjbz_info{
+    margin-left: 12px;
+    color: #b5b5b5;
+
+}
+
+
+.price_info p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.price_info .zk{
+    color: #cf4444;
+}
+
+
+
+
 
 .pay {
 	padding: 20px;
