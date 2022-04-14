@@ -40,4 +40,4 @@
 29. 4/10 动画 两个状态的动画 多个状态的动画 动画执行完毕状态 动画循环infinite  速度曲线 linear steps 分步动画 反向 暂停动画 精灵图动画 多组动画 无缝动画 [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=50](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=50)
 30. 4/11 动画案例 移动端网页初步 视口标签 百分比布局  [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=63](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=63)
 31. 4/12 flex布局. 主轴对齐方式justfy-content, 侧轴对齐方式aligh-items aligh-self 弹性盒子伸缩系数 [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=75](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=75)
----
+32. 4/13修改主轴方向， 弹性盒子换行排列 ， 弹性盒子行排列方式 [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=89](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=89)
