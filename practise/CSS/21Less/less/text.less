@@ -1,0 +1,30 @@
+.box{
+    width: 123*3 px;
+    // height: 123./3 px;
+    height: (123./3) px;
+}
+
+
+.father{
+    background-color: #fff;
+    .son{
+        height: 100px;
+        &:hover{
+            background-color: #ccc;
+        }
+    }
+}
+
+@color :red;
+
+
+.box1{
+    background-color: @color;
+}
+
+.box2{
+    background-color: @color;
+}
+.box3{
+    background-color: @color;
+}
