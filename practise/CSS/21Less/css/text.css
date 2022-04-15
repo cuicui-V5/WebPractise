@@ -1,0 +1,22 @@
+.box {
+  width: 369 px;
+  height: 41 px;
+}
+.father {
+  background-color: #fff;
+}
+.father .son {
+  height: 100px;
+}
+.father .son:hover {
+  background-color: #ccc;
+}
+.box1 {
+  background-color: red;
+}
+.box2 {
+  background-color: red;
+}
+.box3 {
+  background-color: red;
+}
