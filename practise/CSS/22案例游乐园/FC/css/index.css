@@ -436,7 +436,7 @@ body {
   background: #f0f0f0;
 }
 .main .banner {
-  height: 4.26666667rem;
+  width: 10rem;
 }
 .main .tittle {
   padding-left: 0.4rem;
@@ -446,6 +446,7 @@ body {
   line-height: 1.06666667rem;
 }
 .main .items {
+  width: 10rem;
   background: #ffffff;
   margin-bottom: 0.26666667rem;
 }
