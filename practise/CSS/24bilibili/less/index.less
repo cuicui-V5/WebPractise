@@ -1,0 +1,123 @@
+@import "base";
+
+@vw: 3.75vw;
+@color: #fb7299;
+
+header {
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	background-color: #fff;
+	z-index: 2;
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 (12 / @vw) 0 (18 / @vw);
+		height: (44 / @vw);
+		.left {
+			.iconfont {
+				font-size: (28 / @vw);
+				color: @color;
+			}
+		}
+		.right {
+			width: (166 / @vw);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			a {
+				height: (24 / @vw);
+			}
+			.login {
+				width: (24 / @vw);
+			}
+			.download {
+				width: (72 / @vw);
+			}
+			.iconfont {
+				font-size: (22 / @vw);
+				color: #ccc;
+			}
+		}
+	}
+	.bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: (40 / @vw);
+		border-bottom: 1px solid #ccc;
+		.tab {
+			ul {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				li {
+					height: (38 / @vw);
+					margin: 0 (16 / @vw) 1px (16 / @vw);
+
+					text-align: center;
+					line-height: (38 / @vw);
+					font-size: (14 / @vw);
+
+					&.current {
+						border-bottom: @color 2px solid;
+						a {
+							color: @color;
+						}
+					}
+				}
+			}
+		}
+		.more {
+			width: (40 / @vw);
+			height: (40 / @vw);
+			text-align: center;
+			line-height: (40 / @vw);
+			.iconfont {
+				font-size: (24 / @vw);
+				color: #ccc;
+			}
+		}
+	}
+}
+.video_content {
+	margin-top: (84 / @vw);
+	.video_list {
+		display: flex;
+		flex-wrap: wrap;
+		a {
+			width: 50%;
+			padding: (8 / @vw);
+			font-size: (12 / @vw);
+			.pic {
+				position: relative;
+				height: (98 / @vw);
+
+				.count {
+					position: absolute;
+					bottom: 0;
+					display: flex;
+					width: 100%;
+					padding: (8 / @vw);
+					justify-content: space-between;
+					align-items: center;
+					color: #fff;
+					background-image: linear-gradient(
+						to top,
+						rgba(0, 0, 0, 0.6),
+						rgba(0, 0, 0, 0)
+					);
+					i {
+						vertical-align: middle;
+					}
+				}
+			}
+			.txt {
+				margin-top: (5 / @vw);
+				color: #333;
+			}
+		}
+	}
+}
