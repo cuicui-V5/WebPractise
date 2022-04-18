@@ -44,3 +44,4 @@
 33. 4/14 完成小兔鲜pc网页flex布局 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=102
 34. 4/15 rem布局 less预编译器 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=121
 35. 4/16 fc游乐园案例_rem适配 vmvh适配方案 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=140
+36. 4/17 利用vm、vh制作出了bilibili移动端网页 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=155
