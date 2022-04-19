@@ -45,3 +45,5 @@
 34. 4/15 rem布局 less预编译器 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=121
 35. 4/16 fc游乐园案例_rem适配 vmvh适配方案 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=140
 36. 4/17 利用vm、vh制作出了bilibili移动端网页 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=155
+37. 4/18 学习响应式 , 媒体查询 基本原理及使用 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=160
+38. 4/19 初步学习bootstrap 了解基本语法, css样式 组件 插件 https://www.bilibili.com/video/BV1xq4y1q7jZ?p=171
