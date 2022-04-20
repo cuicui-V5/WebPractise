@@ -1,0 +1,36 @@
+nav.navbar {
+  background-color: transparent;
+  border: none;
+}
+nav.navbar a {
+  color: aliceblue!important;
+}
+@media (max-width: 992px) {
+  .carousel .item {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .carousel .item {
+    height: 250px;
+  }
+}
+@media (min-width: 992px) {
+  .carousel .item {
+    height: 500px;
+  }
+}
+.carousel img {
+  height: 100% !important;
+}
+.project {
+  padding-top: 40px;
+  text-align: center;
+}
+.project .container div a {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  height: 200px;
+  background-color: skyblue;
+}
