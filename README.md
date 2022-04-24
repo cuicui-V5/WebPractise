@@ -91,3 +91,5 @@
 1.  4/22 初学js 执行过程 书写位置 注释 输入输出prompt alert console.log 变量 数据类型 数字型 字符串型  [https://www.bilibili.com/video/BV1ux411d75J?p=29](https://www.bilibili.com/video/BV1ux411d75J?p=29 "https://www.bilibili.com/video/BV1ux411d75J?p=29")
 
 2. 4/23 标识符 运算符 流程控制 顺序结构 选择结构 [https://www.bilibili.com/video/BV1ux411d75J?p=69](https://www.bilibili.com/video/BV1ux411d75J?p=69)
+
+3. 4/24 循环结构 命名规范 数组 创建数组 访问数组 [https://www.bilibili.com/video/BV1ux411d75J?p=110](https://www.bilibili.com/video/BV1ux411d75J?p=110)
