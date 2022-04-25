@@ -93,3 +93,5 @@
 2. 4/23 标识符 运算符 流程控制 顺序结构 选择结构 [https://www.bilibili.com/video/BV1ux411d75J?p=69](https://www.bilibili.com/video/BV1ux411d75J?p=69)
 
 3. 4/24 循环结构 命名规范 数组 创建数组 访问数组 [https://www.bilibili.com/video/BV1ux411d75J?p=110](https://www.bilibili.com/video/BV1ux411d75J?p=110)
+
+4. 4/25 冒泡排序 [https://www.bilibili.com/video/BV1ux411d75J?p=112](https://www.bilibili.com/video/BV1ux411d75J?p=112)
