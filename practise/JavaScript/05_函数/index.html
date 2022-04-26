@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            // function sum(a, b) {
+            //     sum = 0;
+            //     for (i = a; i <= b; i++) {
+            //         sum += i;
+            //     }
+            //     console.log(arguments);
+            //     return sum;
+            // }
+            // console.log(sum(1, 100));
+            //反转数组
+            // var arr1 = [1, 2, 3, 4, 5, 6, 7];
+
+            // function arr_res(arr) {
+            //     arr2 = [];
+            //     for (i = 0; i < arr.length; i++) {
+            //         arr2[arr.length - i - 1] = arr[i];
+            //     }
+            //     return arr2;
+            // }
+            // console.log(arr_res(arr1));
+
+            //匿名函数
+            // var fun = function(arg){
+            //     console.log(arg);
+            // }
+            // fun("233");
+            function fun1() {
+                var num = 1;
+                fun2();
+                function fun2() {
+                    var num = 2;
+                    fun3();
+                    function fun3() {
+                        console.log(num);
+                    }
+                }
+            }
+            fun1();
+
+        </script>
+    </head>
+    <body></body>
+</html>
