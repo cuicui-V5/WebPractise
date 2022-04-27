@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //封装自己的数学对象
+        var MyMath={
+            PI:3.14,
+            max:function(){
+                var maxNum=arguments[0];
+                for(var i=0;i<arguments.length;i++)
+                {
+                    if(arguments[i]>maxNum)
+                    {
+                        maxNum=arguments[i];
+                    }
+                }
+                return maxNum;
+            }
+
+        }
+        console.log(MyMath.max(1,2,3,4,55));
+        console.log(Math.abs());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
