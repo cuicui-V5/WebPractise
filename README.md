@@ -95,3 +95,7 @@
 3. 4/24 循环结构 命名规范 数组 创建数组 访问数组 [https://www.bilibili.com/video/BV1ux411d75J?p=110](https://www.bilibili.com/video/BV1ux411d75J?p=110)
 
 4. 4/25 冒泡排序 [https://www.bilibili.com/video/BV1ux411d75J?p=112](https://www.bilibili.com/video/BV1ux411d75J?p=112)
+
+5. 4/26 函数 作用域 预解析 [https://www.bilibili.com/video/BV1ux411d75J?p=143](https://www.bilibili.com/video/BV1ux411d75J?p=143)
+
+6. 4/27 对象 创建对象的三种方法 构造函数 new关键字执行过程 内置对象 math [https://www.bilibili.com/video/BV1ux411d75J?p=161](https://www.bilibili.com/video/BV1ux411d75J?p=161)
