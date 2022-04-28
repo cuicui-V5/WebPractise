@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>date</title>
+        <script>
+            var date = new Date();
+            //console.log(date);
+            var date1 = new Date(2022, 10, 1);
+            //console.log(date1);
+            var date2 = new Date("2022-10-01 9:9:9");
+            console.log(+new Date());
+            date2.setDate(20);
+            console.log(date2);
+            // console.log(date2.getFullYear());
+            // console.log(date2.getMonth());
+            // console.log(date2.getDay());
+            // console.log(date2.getDate());
+            // console.log(date2.getHours());
+            // console.log(date2.getMinutes());
+            // console.log(date2.getSeconds());
+            // console.log(date2.valueOf());
+            // console.log(date2.getTime());
+
+            //倒计时
+            // var date = new Date(2022, 4, 1);
+
+            // var leftTime = function(ms){
+            //     ms=ms/1000;
+            //     s=Math.floor(ms%60)
+            //     m=Math.floor(ms/60%60);
+            //     h=Math.floor(ms/60/60%24);
+            //     d=Math.floor(ms/60/60/24);
+
+            //     return d+"天"+h+"小时"+m+"分钟"+s+"秒";
+
+
+
+            // }
+            // console.log(leftTime(date.getTime() - Date.now()));
+        </script>
+    </head>
+    <body></body>
+</html>
