@@ -99,3 +99,7 @@
 5. 4/26 函数 作用域 预解析 [https://www.bilibili.com/video/BV1ux411d75J?p=143](https://www.bilibili.com/video/BV1ux411d75J?p=143)
 
 6. 4/27 对象 创建对象的三种方法 构造函数 new关键字执行过程 内置对象 math [https://www.bilibili.com/video/BV1ux411d75J?p=161](https://www.bilibili.com/video/BV1ux411d75J?p=161)
+
+7. 4/28 内置对象 math对象 date对象 [https://www.bilibili.com/video/BV1ux411d75J?p=170](https://www.bilibili.com/video/BV1ux411d75J?p=170)
+
+8. 4/29 string对象, array对象 以及内置的方法, 数据类型的内存分配 , 数据类型的传参 [https://www.bilibili.com/video/BV1k4411w7sV](https://www.bilibili.com/video/BV1k4411w7sV)
