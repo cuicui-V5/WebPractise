@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sprite</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .box{
+                margin: 0 auto;
+                width: 200px;
+                height: 200px;
+                background-color: #ccc;
+            }
+            ul{
+                background-color: #ccc;
+                display: block;
+                width: 100px;
+                margin: 0 auto;
+
+            }
+            li{
+                background-color: #123;
+                display: inline-block;
+                height: 24px;
+                width: 24px;
+                list-style: none;
+                background: url(./image/sprite.png);
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">1</div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <script>
+            var lis = document.querySelectorAll("li");
+            var pos=0;
+            for (var i = 0; i < lis.length; i++) {
+                // document.getElementById("").style.backgroundPosition
+                lis[i].style.backgroundPosition = `0px ${pos}px`;
+                pos-=44;
+                console.log(pos);
+            }
+        </script>
+    </body>
+</html>

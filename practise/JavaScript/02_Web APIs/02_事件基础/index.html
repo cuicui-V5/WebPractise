@@ -8,19 +8,39 @@
     </head>
     <body>
         <button id="btn">btn</button>
+        <input type="text" name="" id="inp" value="" />
         <script>
+            // 点击按钮更新时间
             var btn = document.getElementById("btn");
             btn.onclick = function () {
                 var date = new Date();
-                str =""+
-                    date.getFullYear()+"-"+
-                    (date.getMonth()+1)+"-"+
-                    date.getDate()+"-"+
-                    date.getHours()+"-"+
-                    date.getMinutes()+"-"+
+                str =
+                    "" +
+                    date.getFullYear() +
+                    "-" +
+                    (date.getMonth() + 1) +
+                    "-" +
+                    date.getDate() +
+                    "-" +
+                    date.getHours() +
+                    "-" +
+                    date.getMinutes() +
+                    "-" +
                     date.getSeconds();
                 btn.innerText = str;
                 console.log(str);
+            };
+            // 失去获得焦点
+            /**
+             * @type HTMLInputElement
+             */
+            var a = document.getElementById("inp");
+            a.value;
+            a.onfocus = function () {
+                this.value = "怪玥";
+            };
+            a.onblur = function () {
+                this. = "";
             };
         </script>
     </body>
