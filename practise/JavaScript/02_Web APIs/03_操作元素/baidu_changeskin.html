@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0%;
+            }
+            ul,
+            li {
+                list-style: none;
+            }
+            .skin {
+                width: 200px;
+                margin: 200px auto;
+            }
+            .skin ul {
+                display: flex;
+            }
+
+            .skin ul li img {
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="skin">
+            <ul>
+                <li><img src="./image/1.webp" alt="" /></li>
+                <li><img src="./image/2.webp" alt="" /></li>
+                <li><img src="./image/3.webp" alt="" /></li>
+                <li><img src="./image/4.webp" alt="" /></li>
+            </ul>
+        </div>
+
+        <script>
+            var imgs = document.querySelectorAll("li img");
+
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].onclick = function () {
+                    document.body.style.backgroundImage =
+                        "url(" + this.src + ")";
+                    console.log("url(" + this.src + ")");
+                };
+            }
+        </script>
+    </body>
+</html>
