@@ -108,3 +108,4 @@
 1. 5/1 获取元素的几种方法 通过 id 通过标签名 通过 html5 新增的方法 通过类名 通过选择器 还有简单的事件基础 如何操作元素 [https://www.bilibili.com/video/BV1k4411w7sV?p=16](https://www.bilibili.com/video/BV1k4411w7sV?p=16)
 2. 开摆了几天...
 3. 5/4 循环精灵图, 显示隐蔽密码框 通过两种方式修改样式 style 和 classname 排他思想 百度换肤 [https://www.bilibili.com/video/BV1k4411w7sV?p=28](https://www.bilibili.com/video/BV1k4411w7sV?p=28)
+4. 5/5 表格响应鼠标变色, 全选取消全选效果[https://www.bilibili.com/video/BV1k4411w7sV?p=31](https://www.bilibili.com/video/BV1k4411w7sV?p=31)
