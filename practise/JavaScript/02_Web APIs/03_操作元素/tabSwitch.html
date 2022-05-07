@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>tabSwitch</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .tab {
+                width: 600px;
+                margin: 200px auto;
+            }
+            .tab .tab_nav {
+                display: flex;
+                justify-content: space-between;
+            }
+            .tab .tab_nav li {
+                width: 100%;
+                cursor: pointer;
+            }
+            .tab .tab_nav li.current {
+                background-color: red;
+            }
+
+            .tab .tab_body div {
+                display: none;
+            }
+            .tab .tab_body div.current {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab">
+            <div class="tab_nav">
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </div>
+            <div class="tab_body">
+                <div class="current">第一个标签页</div>
+                <div>第二个标签页</div>
+                <div>第三个标签页</div>
+                <div>第四个标签页</div>
+                <div>第五个标签页</div>
+            </div>
+        </div>
+
+        <script>
+            var lis = document.querySelectorAll(".tab_nav li");
+            var divs = document.querySelectorAll(".tab_body div");
+            for (var i = 0; i < lis.length; i++) {
+                //给li添加索引号
+                lis[i].setAttribute("index", i);
+                //给li的点击注册时间
+                lis[i].onclick = function () {
+                    for (var j = 0; j < lis.length; j++) {
+                        //先清空所有的current
+                        lis[j].className = "";
+                        divs[j].className = "";
+                    }
+                    this.className = "current"; //给li和div设置current
+                    divs[this.getAttribute("index")].className = "current";
+                };
+            }
+        </script>
+    </body>
+</html>
