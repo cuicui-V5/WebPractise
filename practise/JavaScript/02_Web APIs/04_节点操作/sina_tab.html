@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sina</title>
+        <style>
+            * {
+                margin: 0%;
+                padding: 0%;
+                list-style: none;
+            }
+            body > ul {
+                display: flex;
+                justify-content: space-between;
+                width: 500px;
+                margin: 200px auto;
+            }
+            .nav_items {
+                position: relative;
+            }
+            .nav_items .more {
+                display: none;
+                position: absolute;
+                top: 100%;
+            }
+            .more li:hover {
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="nav_items">
+                <a href="#">home</a>
+                <ul class="more">
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </li>
+            <li class="nav_items">
+                <a href="#">home</a>
+                <ul class="more">
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </li>
+            <li class="nav_items">
+                <a href="#">home</a>
+                <ul class="more">
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </li>
+            <li class="nav_items">
+                <a href="#">home</a>
+                <ul class="more">
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </li>
+            <li class="nav_items">
+                <a href="#">home</a>
+                <ul class="more">
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            var nav_items = document.querySelectorAll(".nav_items");
+            console.log(nav_items);
+            for (var i = 0; i < nav_items.length; i++) {
+                nav_items[i].onmouseover = function () {
+                    this.children[1].style.display = "block";
+                };
+                nav_items[i].onmouseout = function () {
+                    this.children[1].style.display = "none";
+                };
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+        </ul>
+        <script>
+            // 新增节点需要两步, 创建节点和添加节点
+            li=document.createElement("li");
+            li2=document.createElement("li");
+
+            var ul=document.querySelector("ul");
+
+            ul.appendChild(li);
+            ul.insertBefore(li2,ul.children[0]);
+        </script>
+    </body>
+</html>
