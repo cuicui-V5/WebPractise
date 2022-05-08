@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>动态表格</title>
+        <style>
+            table {
+                margin: 200px auto;
+                width: 300px;
+                border-collapse: collapse;
+            }
+            input[type="text"] {
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="">
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>年龄</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+        <script>
+            var Person = function (name, sex, age) {
+                this.name = name;
+                this.sex = sex;
+                this.age = age;
+            };
+
+            p_xmx = new Person("熊敏熊", "男", 18);
+            p_gr = new Person("怪人", "男", 18);
+            p_ssj = new Person("硕硕", "男", 18);
+
+            peoples = [p_xmx, p_gr, p_ssj];
+            // console.log(peoples);
+            tbody = document.querySelector("tbody");
+            for (var i = 0; i < peoples.length; i++) {
+                //数组中的每个人都创建一行
+                tr = document.createElement("tr");
+                tbody.appendChild(tr);
+                //添加每行的三个td
+                for (k in peoples[i]) {
+                    td = document.createElement("td");
+                    tr.appendChild(td);
+                    td.innerHTML = peoples[i][k];
+                    console.log(peoples[i][k]);
+                }
+                //删除按钮
+                td = document.createElement("td");
+                tr.appendChild(td);
+                btn = document.createElement("input");
+                td.appendChild(btn);
+                btn.type = "button";
+                btn.value = "删除";
+                btn.onclick = function () {
+                    tr.parentNode.removeChild(this.parentNode.parentNode);
+                };
+            }
+        </script>
+    </body>
+</html>
