@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input class="btn1" type="button" value="test" />
+        <input class="btn2" type="button" value="test" />
+
+        <script>
+            // 绑定事件的两种方法:
+            // 方法一; 传统方法
+
+            var btn1 = document.querySelector(".btn1");
+            btn1.onclick = function () {
+                alert("hi");
+            };
+
+            // 方法二: 使用事件监听方法
+            var btn2 = document.querySelector(".btn2");
+
+            fun = function () {
+                alert("233");
+                btn2.removeEventListener("click",fun); //此方法可以移除绑定的事件
+            };
+
+            btn2.addEventListener("click", fun);
+        </script>
+    </body>
+</html>

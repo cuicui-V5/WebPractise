@@ -111,3 +111,5 @@
 4. 5/5 表格响应鼠标变色, 全选取消全选效果[https://www.bilibili.com/video/BV1k4411w7sV?p=31](https://www.bilibili.com/video/BV1k4411w7sV?p=31)
 5. 5/6 获取属性的两种方法,设置属性的两种方法,H5的自定义属性data-.还有移除属性,节点操作, 父级节点parentnode,子级节点,childnode获取所有子节点,children获取元素节点.第一个节点和最后一个节点[黑马程序员JavaScript核心教程，前端基础教程，JS必会的DOM BOM操作_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1k4411w7sV?p=40)
 6. 5/7 新浪下拉菜单 兄弟节点 新增节点  留言板 删除节点  复制节点 [https://www.bilibili.com/video/BV1k4411w7sV?p=48](https://www.bilibili.com/video/BV1k4411w7sV?p=48)
+7. 5/8 动态表格案例
+8. 5/10 事件初步 注册时间的两种方式, 删除事件的两种方式 [https://www.bilibili.com/video/BV1k4411w7sV?p=61](https://www.bilibili.com/video/BV1k4411w7sV?p=61)
