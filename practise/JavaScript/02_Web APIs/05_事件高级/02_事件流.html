@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>事件流</title>
+        <style>
+            .father {
+                width: 200px;
+                height: 200px;
+                background-color: aqua;
+                margin: 200px auto;
+            }
+            .son {
+                width: 100px;
+                height: 100px;
+                background-color: blueviolet;
+                margin: 25px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="father">
+            1
+            <div class="son">2</div>
+        </div>
+        <a href="baidu.com">baidu</a>
+        <script>
+            var father = document.querySelector(".father");
+            var son = document.querySelector(".son");
+
+            // js的事件流有两种: 事件捕获 和 事件冒泡
+            // 事件捕获:
+            /*      son.addEventListener("click", function () {
+                alert("son");
+            },true);
+            father.addEventListener("click", function () {
+                alert("father");
+            },true); */
+
+            // 第三个参数为true代表开启了事件捕获, 会从外向内的传递事件, 如果点击了son, 那么会先执行father的事件然后再执行son
+
+            //冒泡捕获
+            son.addEventListener("click", fu);
+            father.addEventListener("click", fu);
+
+            function fu(event) {
+                alert(this.className)
+                event.stopPropagation();
+            }
+
+            //第三个参数没有填写或者填写了false的时候, 会开启事件冒泡, 会从内向外的传递事件, 所以先执行son的事件, 再执行father的事件, 尽管没有点击father
+
+            // son.onclick = function (e) {
+            //     alert("son");
+            //     console.log(e.currentTarget);
+            // };
+            // father.onclick = function (e) {
+            //     alert("father");
+
+            //     console.log(e.currentTarget);
+            // };
+
+            //传统方式的绑定事件和attachEvent只有事件冒泡
+
+            // 阻止默认事件
+            var a = document.querySelector("a");
+            // a.addEventListener("click", function (e) {
+            //     e.preventDefault();
+            // });
+            a.onclick=function (e) {
+                e.prebentDdfault(); //现代浏览器支持
+                e.returnValue; //ie678兼容写法
+                return false; //通用方法, 但是return下面的语句不会执行
+            }
+        </script>
+    </body>
+</html>
