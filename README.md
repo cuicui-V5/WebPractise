@@ -113,3 +113,6 @@
 6. 5/7 新浪下拉菜单 兄弟节点 新增节点  留言板 删除节点  复制节点 [https://www.bilibili.com/video/BV1k4411w7sV?p=48](https://www.bilibili.com/video/BV1k4411w7sV?p=48)
 7. 5/8 动态表格案例
 8. 5/10 事件初步 注册时间的两种方式, 删除事件的两种方式 [https://www.bilibili.com/video/BV1k4411w7sV?p=61](https://www.bilibili.com/video/BV1k4411w7sV?p=61)
+9. 5/11 事件流 捕获 冒泡 事件对象 事件对象的常用属性和方法 事件委托 [https://www.bilibili.com/video/BV1k4411w7sV?p=67](https://www.bilibili.com/video/BV1k4411w7sV?p=67)
+10. 5/12 鼠标事件, 键盘事件, 三个案例[https://www.bilibili.com/video/BV1k4411w7sV?p=75&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=75&spm_id_from=pageDriver)
+11.
