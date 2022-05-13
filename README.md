@@ -115,4 +115,4 @@
 8. 5/10 事件初步 注册时间的两种方式, 删除事件的两种方式 [https://www.bilibili.com/video/BV1k4411w7sV?p=61](https://www.bilibili.com/video/BV1k4411w7sV?p=61)
 9. 5/11 事件流 捕获 冒泡 事件对象 事件对象的常用属性和方法 事件委托 [https://www.bilibili.com/video/BV1k4411w7sV?p=67](https://www.bilibili.com/video/BV1k4411w7sV?p=67)
 10. 5/12 鼠标事件, 键盘事件, 三个案例[https://www.bilibili.com/video/BV1k4411w7sV?p=75&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=75&spm_id_from=pageDriver)
-11.
+11. 进入 bom 的学习, 学习了 window 对象,window 对象的事件: onload 和 DOMContentLoaded,还有调整窗口大小 onresize,还有两个定时器 setTimeout 和 setIntelVal 以及取消这两个定时器的 clear 方法, 还初步知道了什么是回调函数,了解了不同情况下 this 的指向问题[https://www.bilibili.com/video/BV1k4411w7sV?p=88&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=88&spm_id_from=pageDriver)

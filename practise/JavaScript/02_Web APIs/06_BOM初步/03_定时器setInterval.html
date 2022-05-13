@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div></div>
+        <p>距离6/25还有:</p>
+        <span></span>
+        <script>
+            var div = document.querySelector("div");
+            var span = document.querySelector("span");
+            setInterval(function () {
+                var time_now = new Date(); //输出当前时间
+                var str_time_now = `现在是${time_now.getHours()}点${time_now.getMinutes()}分${time_now.getSeconds()}秒`;
+                // console.log(str_time);
+                div.innerHTML = str_time_now;
+
+                // 计算距离6/25的时间
+                var june = new Date(2022, 5, 25);
+                var very = june - time_now; //得出相差的毫秒数
+                // console.log(very);
+                // 进行换算
+                var v_second = (very / 1000) % 60;
+                v_second = Math.floor(v_second);
+                var v_minute = (very / 1000 / 60) % 60;
+                v_minute = Math.floor(v_minute);
+                var v_hour = (very / 1000 / 60 / 60) % 24;
+                v_hour = Math.floor(v_hour);
+                var v_day = very / 1000 / 60 / 60 / 24;
+                v_day = Math.floor(v_day);
+                //换算逻辑结束, 进行拼接
+
+                var str_very = `${v_day}天 ${v_hour}时 ${v_minute}分 ${v_second}秒`
+                span.innerHTML = str_very;
+            }, 1000);
+        </script>
+    </body>
+</html>

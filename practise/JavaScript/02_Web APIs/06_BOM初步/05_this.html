@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var Person = function (name) {
+                console.log(this); //输出tim
+                this.name = name; //实际上与tim.name=name等价
+            };
+            var tim = new Person("tim");
+            console.log(tim);
+        </script>
+    </body>
+</html>
