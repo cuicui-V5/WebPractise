@@ -25,16 +25,22 @@
         </div>
         <script>
             var cu = document.querySelector(".cursor");
-            console.log(cu);
-            cu.style.left = "200" + "px";
-            cu.style.top = "200" + "px";
-            document.addEventListener("mousemove", function (e) {
-                x = e.clientX;
-                y = e.clientY;
-                console.log(x);
-                cu.style.left = x + "px";
-                cu.style.top = y + "px";
-            });
+            document.addEventListener("touchmove", move);
+            document.addEventListener("mousemove", move);
+
+            function move(event) {
+                var x = event.clientX
+                    ? event.clientX - 50
+                    : event.touches[0].clientX - 50;
+                var y = event.clientY
+                    ? event.clientY - 50
+                    : event.touches[0].clientY - 50;
+                console.log(x, y);
+                setTimeout(function () {
+                    cu.style.left = x + "px";
+                    cu.style.top = y + "px";
+                }, 200);
+            }
         </script>
     </body>
 </html>
