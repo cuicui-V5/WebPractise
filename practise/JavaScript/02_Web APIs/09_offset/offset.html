@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .father {
+                position: relative;
+                margin: 200px auto;
+                width: 500px;
+                height: 500px;
+                background-color: rgb(116, 55, 55);
+            }
+            .son {
+                width: 300px;
+                height: 300px;
+                background-color: rgb(166, 121, 121);
+            }
+            .grandson {
+                margin: 10px;
+                padding: 10px;
+                box-sizing: border-box;
+                width: 100px;
+                height: 100px;
+                background-color: rgb(253, 252, 252);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="father">
+            1
+            <div class="son">
+                2
+                <div class="grandson">3</div>
+            </div>
+        </div>
+        <script>
+            var father = document.querySelector('.father');
+            var son = document.querySelector('.son');
+            var grandson = document.querySelector('.grandson');
+            console.log(grandson.offsetParent); //获取父元素
+            console.log(grandson.offsetTop); //距离父元素的垂直偏移量
+            console.log(grandson.offsetLeft); //距离父元素的水平偏移量
+            console.log(grandson.offsetWidth); //返回元素宽度, 不包括margin, 包括padding和border(设置box-sizing:border-box后不包括)
+            console.log(grandson.offsetHeight);
+
+        </script>
+    </body>
+</html>
