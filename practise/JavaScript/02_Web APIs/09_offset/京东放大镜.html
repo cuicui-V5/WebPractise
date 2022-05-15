@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            .box {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+                background-color: #ccc;
+                background-image: url(./img/2.jfif);
+                background-size: cover;
+            }
+            .magnifier {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+                width: 100px;
+                height: 100px;
+                background-color: rgba(255, 100, 17, 0.821);
+            }
+            .preview {
+                display: none;
+                width: 500px;
+                height: 500px;
+                margin: 0 auto;
+                background-color: #ccc;
+                background-image: url(./img/2.jfif);
+                background-size: 300%;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            box
+            <div class="magnifier"></div>
+        </div>
+        <div class="preview"></div>
+        <p></p>
+        <script>
+            var div = document.querySelector(".box");
+            var magnifier = div.children[0];
+            var preview = document.querySelector(".preview");
+            var p = document.querySelector("p");
+            box_x = div.offsetLeft;
+            box_y = div.offsetTop; //获取盒子位置
+            div.addEventListener("mousemove", function (e) {
+                x = e.pageX;
+                y = e.pageY; //获取鼠标位置
+                magnifier.style.display = "block";
+                preview.style.display = "block";
+
+                cu_x = x - box_x; //获取鼠标在盒子内的位置
+                cu_y = y - box_y;
+
+                if (
+                    cu_x > div.offsetWidth - 10 || //出界隐蔽
+                    cu_x < 10 ||
+                    cu_y > div.offsetHeight - 10 ||
+                    cu_y < 10
+                ) {
+                    magnifier.style.display = "none";
+                    preview.style.display = "none";
+                }
+                p.innerHTML = "" + cu_x + "/" + cu_y;
+
+                if (!(cu_x < 50 || cu_x > 250)) {
+                    //如果不在边缘
+                    //更新放大镜位置
+                    magnifier.style.left = cu_x - 50 + "px";
+                }
+                if (!(cu_y < 50 || cu_y > 250)) {
+                    magnifier.style.top = cu_y - 50 + "px";
+                }
+                // 更新预览区域位置
+                //TODO 未完成
+                preview.style.backgroundPosition = `-${
+                    (magnifier.offsetLeft + 50) * 3
+                }px -${(magnifier.offsetTop + 50) * 3}px`;
+            });
+        </script>
+    </body>
+</html>
