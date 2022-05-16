@@ -117,4 +117,5 @@
 10. 5/12 鼠标事件, 键盘事件, 三个案例[https://www.bilibili.com/video/BV1k4411w7sV?p=75&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=75&spm_id_from=pageDriver)
 11. 5/13 进入 bom 的学习, 学习了 window 对象,window 对象的事件: onload 和 DOMContentLoaded,还有调整窗口大小 onresize,还有两个定时器 setTimeout 和 setIntelVal 以及取消这两个定时器的 clear 方法, 还初步知道了什么是回调函数,了解了不同情况下 this 的指向问题[https://www.bilibili.com/video/BV1k4411w7sV?p=88&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=88&spm_id_from=pageDriver)
 12. 5/14 了解同步和异步, js 执行机制, location 对象的属性, href search , navigator 对象的 useragent , history 对象方法 back forward go ,offset 系列属性, 获取在盒子内的点击坐标的案例 [https://www.bilibili.com/video/BV1k4411w7sV?p=102&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=102&spm_id_from=pageDriver)
-13.
+13. 5/15 两个案例 模态框拖拽, 京东放大镜 (完成了一部份)
+14. 5/16 完成京东放大镜
