@@ -119,3 +119,5 @@
 12. 5/14 了解同步和异步, js 执行机制, location 对象的属性, href search , navigator 对象的 useragent , history 对象方法 back forward go ,offset 系列属性, 获取在盒子内的点击坐标的案例 [https://www.bilibili.com/video/BV1k4411w7sV?p=102&spm_id_from=pageDriver](https://www.bilibili.com/video/BV1k4411w7sV?p=102&spm_id_from=pageDriver)
 13. 5/15 两个案例 模态框拖拽, 京东放大镜 (完成了一部份)
 14. 5/16 完成京东放大镜
+15. 5/17 client系列, 获取元素不包括边框的大小, 立刻执行函数, 两种写法: (function (){})() ; (function(){}()) ;scroll系列获取滚动距离, 淘宝侧边栏案例  [https://www.bilibili.com/video/BV1k4411w7sV?p=118](https://www.bilibili.com/video/BV1k4411w7sV?p=118)
+16.
