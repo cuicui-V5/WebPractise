@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="点击开始动画" />
+        <div class="box"></div>
+        <script>
+            /** @type{HTMLElement */
+            var box = document.querySelector(".box");
+            /** @type{HTMLElement */
+            var btn = document.querySelector("input");
+
+            /** @param {HTMLElement} obj
+             * @param {HTMLElement} distance
+             */
+            function ani(obj, distance) {
+                obj.style.top = 0 + "px";
+                obj.style.left = 0 + "px";
+                clearInterval(obj.timer)
+                function move(e) {
+                    var box_x = obj.offsetLeft;
+                    var box_Y = obj.offsetTop;
+                    obj.style.top = box_x + 1 + "px";
+                    obj.style.left = box_Y + 1 + "px";
+                    if (box_x > distance) {
+                        clearInterval(obj.timer);
+                    }
+                }
+                obj.timer = setInterval(move, 30);
+            }
+            btn.addEventListener("click", function () {
+                ani(box, 100);
+            });
+        </script>
+    </body>
+</html>
