@@ -120,4 +120,7 @@
 13. 5/15 两个案例 模态框拖拽, 京东放大镜 (完成了一部份)
 14. 5/16 完成京东放大镜
 15. 5/17 client系列, 获取元素不包括边框的大小, 立刻执行函数, 两种写法: (function (){})() ; (function(){}()) ;scroll系列获取滚动距离, 淘宝侧边栏案例  [https://www.bilibili.com/video/BV1k4411w7sV?p=118](https://www.bilibili.com/video/BV1k4411w7sV?p=118)
-16.
+16. 5/18 js 动画原理, 动画函数, 缓动动画 [https://www.bilibili.com/video/BV1k4411w7sV?p=127](https://www.bilibili.com/video/BV1k4411w7sV?p=127)
+17. 5/19 -5/20 做网页轮播图案例
+18. 5/21 移动端 touch 事件 touch 事件对象 拖动元素 [https://www.bilibili.com/video/BV1k4411w7sV?p=145](https://www.bilibili.com/video/BV1k4411w7sV?p=145)
+19. 开始准备英语四级, 期末复习
