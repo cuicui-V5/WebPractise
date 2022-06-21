@@ -125,3 +125,4 @@
 18. 5/21 移动端 touch 事件 touch 事件对象 拖动元素 [https://www.bilibili.com/video/BV1k4411w7sV?p=145](https://www.bilibili.com/video/BV1k4411w7sV?p=145)
 19. 开始准备英语四级, 期末复习
 20. 6/20 全面开始学习, 整理思维导图, 复习前面知识
+21. 6/21 复习完成js基础部分
