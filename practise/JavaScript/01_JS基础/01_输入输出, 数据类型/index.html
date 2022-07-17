@@ -50,11 +50,17 @@
             // console.log(typeof str);
 
             //模板字符串
-            var a=100;
-            var b=200;
+            var a = 100;
+            var b = 200;
 
-            console.log(`用反引号包裹的叫做模板字符串${a} ${b}`);
+            //标签化模板字符串
 
+            function fun(str) {
+                console.log(arguments);
+            }
+            fun`用反引号包裹的叫做模板字符串${100 + 200} ${b}`;
+
+            // console.log(`用反引号包裹的叫做模板字符串${a} ${b}`);
         </script>
     </head>
     <body>
