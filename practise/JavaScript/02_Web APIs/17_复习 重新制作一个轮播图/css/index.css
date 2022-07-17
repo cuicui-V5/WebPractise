@@ -1,0 +1,69 @@
+.carousel {
+  position: relative;
+  width: 200px;
+  height: 112px;
+  margin: 200px 200px;
+}
+.carousel .img {
+  position: absolute;
+  width: 1000px;
+  left: 0;
+}
+.carousel .img img {
+  float: left;
+  width: 200px;
+  height: auto;
+}
+.carousel .ctrl {
+  position: absolute;
+  width: 200px;
+  height: 112px;
+}
+.carousel .ctrl .btn {
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: translateY(-50%);
+}
+.carousel .ctrl .btn:hover {
+  background-color: #b0b0b0;
+  color: white;
+}
+.carousel .ctrl .leftBtn {
+  left: 0;
+}
+.carousel .ctrl .rightBtn {
+  right: 0;
+}
+.carousel .ctrl .dots {
+  position: absolute;
+  bottom: 5%;
+  vertical-align: middle;
+}
+.carousel .ctrl .dots .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.carousel .ctrl .dots .dot.current {
+  width: 10px;
+  height: 10px;
+  background-color: #1eef41;
+}
+.carousel .ctrl .dots .dot:hover {
+  width: 14px;
+  background-color: #00eaff;
+}
