@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                overflow: hidden;
+                position: relative;
+            }
+            div {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <div>move</div>
+        <script>
+            let div = document.querySelector("div");
+            let startX, startY, boxX, boxY;
+            console.log(div);
+            //先获取初始坐标
+            div.addEventListener("touchstart", function (e) {
+                console.log(e);
+                startX = e.touches[0].pageX;
+                startY = e.touches[0].pageY;
+                //获取盒子初始坐标
+                boxX = div.offsetLeft;
+                boxY = div.offsetTop;
+                // console.log(startX, startY);
+            });
+            //获取移动坐标实时计算移动距离
+            div.addEventListener("touchmove", function (e) {
+                let moveX = e.touches[0].pageX - startX;
+                let moveY = e.touches[0].pageY - startY;
+                console.log(moveX, moveY);
+
+                div.style.left=boxX+moveX+'px';
+                div.style.top=boxY+moveY+'px';
+            });
+        </script>
+    </body>
+</html>
