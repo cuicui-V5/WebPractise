@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class father {
+                constructor(name) {
+                    this.name = name;
+                }
+                say() {
+                    console.log("我是父亲");
+                }
+            }
+            let obj = new father("father");
+            obj.say();
+            class son extends father {
+                constructor(name) {
+                    // this.name = name;
+                    super(name);
+                }
+                  say() {
+                    console.log("我是儿子");
+                }
+                test(){
+                    super.say();
+                }
+            }
+            // 子类继承父类, 如果不写构造函数, 那么不会报错,
+            //  如果写了自己的构造函数, 那么需要使用super()函数来调用弗雷德构造函数
+            let sonObj = new son("son");
+            sonObj.say();
+            sonObj.test();
+        </script>
+    </body>
+</html>
