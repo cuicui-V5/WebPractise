@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button class="a1">click</button>
+        <button class="a2">click</button>
+        <button class="a3">click</button>
+        <button class="a4">click</button>
+        <div></div>
+        <script>
+            let btn1 = document.querySelector(".a1");
+            let btn2 = document.querySelector(".a2");
+            let btn3 = document.querySelector(".a3");
+            let btn4 = document.querySelector(".a4");
+            //存储数据
+            btn1.onclick = function () {
+                localStorage.setItem("name", "tim");
+            };
+            //修改数据 重新存储一个相同的键值的数据
+            btn2.onclick = function () {
+                localStorage.setItem("name", "cook");
+            };
+            // 删除数据
+            btn3.onclick = function () {
+                localStorage.removeItem("name");
+            };
+            //清空数据
+            btn4.onclick = function () {
+                localStorage.clear();
+            };
+            let name = localStorage.getItem("name");
+            let div = document.querySelector("div");
+            div.innerHTML = name;
+        </script>
+    </body>
+</html>
