@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: all 0.2s;
+}
+.tab {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: black 2px solid;
+  border-radius: 3%;
+}
+.tab .tabNav {
+  position: relative;
+}
+.tab .tabNav ul {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.tab .tabNav ul li {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border: black 2px solid;
+  border-radius: 20%;
+  background-color: rgba(50, 73, 187, 0.171);
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+.tab .tabNav ul li .remove {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+}
+.tab .tabNav ul li.active {
+  background-color: rgba(255, 105, 180, 0.287);
+}
+.tab .tabNav .add {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: black 2px solid;
+  border-radius: 30%;
+  background-color: rgba(46, 29, 169, 0.327);
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.tab .tabContent {
+  height: 300px;
+  margin: 10px;
+  border: steelblue 2px solid;
+  border-radius: 3%;
+  background-color: rgba(46, 20, 92, 0.155);
+  cursor: pointer;
+}
+.tab .tabContent section {
+  display: none;
+}
+.tab .tabContent section.active {
+  display: block;
+}
