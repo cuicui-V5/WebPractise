@@ -1,5 +1,8 @@
 window.addEventListener("load", function () {
     var that;
+    var num = 0;
+    var sum = 0;
+    var str;
     class tab {
         constructor(id) {
             //获取元素
@@ -13,12 +16,6 @@ window.addEventListener("load", function () {
              */
             this.navBar = this.main.querySelector(".tabNav ul");
             this.tabContent = this.main.querySelector(".tabContent");
-            // this.lis = this.main.querySelectorAll(".tabNav ul li");
-            // /**
-            //  * @type {HTMLElement} tabContent
-            //  */
-            // this.tabContents = this.main.querySelectorAll(".tabContent section");
-            // console.log(tab,tabNav,tabContent);
             this.addBtn = this.main.querySelector(".add");
             this.addBtn.onclick = this.add;
             this.init();
@@ -35,13 +32,17 @@ window.addEventListener("load", function () {
             this.tabContents = this.main.querySelectorAll(".tabContent section");
             for (var i = 0; i < this.lis.length; i++) {
                 this.lis[i].index = i;
-                this.lis[i].onclick = this.toggle;
+                this.lis[i].addEventListener("click", this.toggle);
+                this.lis[i].children[0].addEventListener("click", this.edit);
+
                 //给删除按钮绑定事件
-                this.lis[i].children[1].onclick=this.del;
+                this.lis[i].children[1].onclick = this.del;
+
+                this.tabContents[i].addEventListener("click", this.edit);
             }
         }
         //切换功能
-        toggle() {
+        toggle(e) {
             //先去除其他元素的acitve类
             for (var i = 0; i < that.lis.length; i++) {
                 that.lis[i].classList.remove("active");
@@ -50,34 +51,63 @@ window.addEventListener("load", function () {
 
             this.classList.add("active");
             that.tabContents[this.index].classList.add("active");
+            console.log("切换到" + this.index);
         }
         //添加功能
-        add() {
-            //新增一个tab --start
-            var li = document.createElement("li");
-            var nvaSpan = document.createElement("span");
-            nvaSpan.innerHTML = "newTab";
-            var nvaDiv = document.createElement("div");
-            nvaDiv.className = "remove";
-            li.appendChild(nvaSpan);
-            li.appendChild(nvaDiv);
-            that.navBar.appendChild(li);
-            //新增一个tab --end
-            //新增一个内容区域 --start
-            var contentSection = document.createElement("section");
-            contentSection.innerHTML = "新内容";
-            that.tabContent.appendChild(contentSection);
-            //新增一个内容区域 ==end
+        add(e) {
+            var li = `<li>
+                        <span>新标签${num++}</span>
+                        <div class="remove">X</div>
+                    </li>`;
+            that.navBar.insertAdjacentHTML("beforeend", li);
+            var section = `<section>新内容${Math.ceil(Math.random() * 100)}</section>`;
+            that.tabContent.insertAdjacentHTML("beforeend", section);
             that.init();
-            console.log(that);
         }
         // 删除功能
-        del() {
-            console.log(this);
-            that.navBar.removeChild(this.parentNode);
+        del(e) {
+            that.init();
+            e.stopPropagation();
+            var i = this.parentNode.index;
+            var liSum = that.lis.length;
+            if (i > 0) {
+                i--;
+            } else if (i === 0) {
+                i++;
+            }
+
+            that.lis[i].click();
+            if (liSum > 1) {
+                that.navBar.removeChild(this.parentNode);
+                that.tabContent.removeChild(that.tabContents[this.parentNode.index]);
+            }
         }
         //修改功能
-        edit() {}
+        edit(e) {
+            // e.stopPropagation();
+            //每点击一次计数器+1, 如果300ms之内计数器超过1, 那么就证明双击
+            console.log(e);
+            sum++;
+            var timer = setTimeout(function () {
+                sum = 0;
+            }, 300);
+
+            //必须双击
+            if (sum > 1) {
+                // var str = window.prompt("请输入名称:","new");
+                //当前元素上生成一个输入框
+                // var inp = `<input type="text" class="edit" value="${this.innerText}" multiple/>`;
+                var inp = `<textarea class="edit">${this.innerText}</textarea>`;
+                e.srcElement.insertAdjacentHTML("afterEnd", inp);
+                e.srcElement.nextSibling.focus();
+                e.srcElement.nextSibling.addEventListener("blur", function (obj) {
+                    str = this.value;
+                    str = str == "" ? "new" : str;
+                    this.previousSibling.innerText = str;
+                    this.remove();
+                });
+            }
+        }
     }
 
     new tab(".tab");
