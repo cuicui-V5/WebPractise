@@ -4,12 +4,19 @@
     list-style: none;
     transition: all 0.2s;
 }
+.tittle {
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
 .tab {
     position: relative;
     width: 600px;
     height: 400px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 20px;
     border: black 2px solid;
     border-radius: 3%;
     .tabNav {
@@ -20,14 +27,32 @@
             li {
                 position: relative;
                 display: inline-block;
-                width: 50px;
+                width: 80px;
                 height: 30px;
+                margin: 5px;
                 border: black 2px solid;
-                border-radius: 20%;
+                border-radius: 15%;
                 background-color: rgba(50, 73, 187, 0.171);
                 text-align: center;
                 line-height: 30px;
                 cursor: pointer;
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+                .edit {
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    width: 80%;
+                    height: 80%;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 16px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    resize: none;
+                }
                 .remove {
                     position: absolute;
                     top: -8px;
@@ -55,12 +80,13 @@
             border-radius: 30%;
             background-color: rgba(46, 29, 169, 0.327);
             text-align: center;
+            font-size: 20px;
             line-height: 30px;
             cursor: pointer;
-            font-size: 20px;
         }
     }
     .tabContent {
+        position: relative;
         height: 300px;
         margin: 10px;
         border: steelblue 2px solid;
@@ -69,10 +95,24 @@
         cursor: pointer;
         section {
             display: none;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
             &.active {
                 display: block;
             }
-
+        }
+        .edit {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 3%;
+            font-weight: 500;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            resize: none;
         }
     }
 }
