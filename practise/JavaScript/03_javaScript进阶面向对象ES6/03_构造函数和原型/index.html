@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function Person(name) {
+                this.name = name;
+            }
+            Person.prototype.say = function () {
+                console.log(this.name);
+            }; //定义原型对象函数
+            var p1 = new Person("xm");
+            var p2 = new Person("lh");
+            // console.log(p1.say === p2.say);
+            console.log(Person.prototype);
+            // p1.say(); //可以正常输出
+            function fun() {
+                console.log(`this is ${this}`);
+            }
+            // fun();
+            fun.call(p1)
+        </script>
+    </body>
+</html>
