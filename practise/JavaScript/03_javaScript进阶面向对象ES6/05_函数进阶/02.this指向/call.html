@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 修改函数内部this指向的三种方法
+            // call
+
+            let o = {
+                name: "tim",
+            };
+
+            function fun() {
+                console.log(this);
+                return "re"
+            }
+
+            fun(); //window
+            let re=fun.call(o); //object
+            console.log("return"+re); //返回原函数的返回值
+
+            //call实现继承
+
+            function Father() {
+                this.name = name;
+                this.say = function () {
+                    console.log("hello");
+                };
+            }
+            function Son() {
+                Father.call(this);
+            }
+            let p = new Son();
+            p.say();
+            //apply
+
+        </script>
+    </body>
+</html>

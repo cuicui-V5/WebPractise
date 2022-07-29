@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 1. 普通函数
+            function fun() {
+                console.log("hellow world");
+            }
+            fun();
+            fun.call();
+
+            // 2. 对象的方法
+            let o = new Object();
+            o.fun = function () {};
+            o.fun();
+
+            // 3. 构造函数
+            function Person(name) {
+                this.name = name;
+            }
+            let tom = new Person("tom");
+
+            // 4. 绑定事件函数
+            document.onclick = function () {
+                console.log("hello");
+            };
+
+            // 5. 定时器函数
+            setTimeout(function () {
+                console.log("hello");
+            }, 1000);
+            setInterval(function () {
+                console.log("hello");
+            }, 1000);
+
+            // 6. 立即执行函数
+            (function fun() {
+                console.log("hello");
+            })();
+
+        </script>
+    </body>
+</html>
