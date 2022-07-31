@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //斐波那契 递归
+            // 输入第几项, 输出这一项的值
+            let i=0;
+            function fibo(n) {
+                i++;
+                if (n == 1 || n == 2) {
+                    return 1;
+                }
+                return fibo(n - 2) + fibo(n - 1);
+            }
+            console.log(fibo(50));
+            console.log(`递归进行了${i}次`);
+        </script>
+    </body>
+</html>
