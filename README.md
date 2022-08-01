@@ -74,3 +74,8 @@
 24. 7/20 js es6 面向对象基础 继承 super 关键字[https://www.bilibili.com/video/BV1Kt411w7MP?p=8](https://www.bilibili.com/video/BV1Kt411w7MP?p=8)
 25. 7/21 面向对象 tab 栏[https://www.bilibili.com/video/BV1Kt411w7MP?p=16](https://www.bilibili.com/video/BV1Kt411w7MP?p=16)
 26. 7/25 构造函数和原型 构造函数 new 执行过程 构造函数的实例成员和静态成员 构造函数原型 对象原型 原型链 成员查找机制 继承 call() es5 继承的方法 [https://www.bilibili.com/video/BV1Kt411w7MP?p=37](https://www.bilibili.com/video/BV1Kt411w7MP?p=37)
+27. 7/28 es5 新方法, 数组迭代方法, 字符串 trim 方法, 对象属性方法 defineproperty 方法 查询上班信息案例[https://www.bilibili.com/video/BV1Kt411w7MP?p=50](https://www.bilibili.com/video/BV1Kt411w7MP?p=50)
+28. 7/29 函数进阶 函数三种声明方式, 六种调用方式, 函数中 this 指向问题, 改变函数中 this 指向, call apply bind 严格模式 如何开启严格模式 严格模式的变化 高阶函数[https://www.bilibili.com/video/BV1Kt411w7MP?p=62](https://www.bilibili.com/video/BV1Kt411w7MP?p=62)
+29. 7/30 闭包 递归 [https://www.bilibili.com/video/BV1Kt411w7MP?p=71](https://www.bilibili.com/video/BV1Kt411w7MP?p=71)
+30. 7/31 递归 深浅拷贝 [https://www.bilibili.com/video/BV1Kt411w7MP?p=76](https://www.bilibili.com/video/BV1Kt411w7MP?p=76)
+31. 8/1 正则表达式 边界符 字符类 量词符 预定义类 正则替换 es6 的 let 关键字 [https://www.bilibili.com/video/BV1Kt411w7MP?p=97](https://www.bilibili.com/video/BV1Kt411w7MP?p=97)

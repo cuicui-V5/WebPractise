@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>用户名验证</title>
+    </head>
+    <body>
+        <input type="text" class="text" />
+
+        <script>
+            let text = document.querySelector(".text");
+            //正则表达式: 6-16位大小写字母数字和_
+            let reg = /^[a-zA-Z0-9_]{6,16}$/;
+            text.addEventListener("keyup", function () {
+                let str = text.value;
+                console.log(str);
+
+                if (reg.test(str)) {
+                    document.body.style.backgroundColor = "green";
+                    console.log("green");
+                } else {
+                    document.body.style.backgroundColor = "red";
+                    console.log("red");
+                }
+            });
+        </script>
+    </body>
+</html>
