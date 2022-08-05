@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="../jquery-3.6.0.js"></script>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <script>
+            //DOM元素获取方式
+            let d = document.querySelector("div");
+
+            //jq获取方式
+            $("div").hide();
+
+            //dom对象转换为jq对象
+            $(d).hide(); //直接将dom元素放入$中即可
+
+            // 第一种 jq对象转换为dom对象 的方法
+            $("div")[0].style.backgroundColor = "red"; //因为是伪数组, 所以可以用[0] 获取dom元素
+            // 第二种 jq对象转换为dom对象 的方法
+            $("div").get(0).style.backgroundColor = "pink";
+        </script>
+    </body>
+</html>

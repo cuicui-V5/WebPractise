@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul {
+                display: inline-block;
+                position: relative;
+            }
+            ul a {
+                display: inline-block;
+                width: 100px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                background-color: pink;
+                border: 2px solid black;
+            }
+            ul > ul {
+                position: absolute;
+                top: 50px;
+                left: 0;
+                display: none;
+            }
+            ul > ul > li {
+                width: 100px;
+                height: 30px;
+                background-color: skyblue;
+            }
+        </style>
+        <script src="../jquery-3.6.0.js"></script>
+    </head>
+    <body>
+        <script>
+            $(function () {
+                $("a").mouseover(function () {
+                    $(this).siblings("ul").show();
+                });
+                $("a").mouseout(function () {
+                    $(this).siblings("ul").hide();
+                });
+            });
+        </script>
+        <div class="menu">
+            <ul>
+                <a href="">新浪</a>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </ul>
+            <ul>
+                <a href="">新浪</a>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </ul>
+            <ul>
+                <a href="">新浪</a>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </ul>
+        </div>
+    </body>
+</html>
