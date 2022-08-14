@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./jquery-3.6.0.min.js"></script>
+        <style>
+            table {
+                margin: 50px auto;
+                border-collapse: collapse;
+            }
+            td,th {
+                min-width: 70px;
+                height: 50px;
+            }
+            tr:nth-child(2n + 1) {
+                background-color: rgba(75, 218, 253, 0.284);
+            }
+            .btn {
+                margin: 0 auto;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="btn">
+            <button>点击刷新</button>
+        </div>
+        <script>
+            let tbody = document.querySelector("tbody");
+            $("button").on("click", function () {
+                //点击按钮 使用get获取数据
+                let data = {};
+                $.ajax({
+                    type: "get",
+                    url: "http://www.liulongbin.top:3006/api/getbooks",
+                    data: {},
+                    success: (res) => {
+                        console.log(res);
+                        data = res;
+                        tbody.innerHTML = "";
+                        res.data.forEach((element) => {
+                            console.log(element);
+                            let { id, bookname, author, publisher } = element;
+                            let html = `
+                                <tr>
+                                    <td>${id}</td>
+                                    <td>${bookname}</td>
+                                    <td>${author}</td>
+                                    <td>${publisher}</td>
+                                </tr>
+                                `;
+                            tbody.insertAdjacentHTML("beforeend", html);
+                        });
+                    },
+                });
+                console.log(data);
+            });
+        </script>
+    </body>
+</html>
