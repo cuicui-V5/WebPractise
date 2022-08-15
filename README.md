@@ -1,12 +1,4 @@
-1. 2022/1/15 晚 21:00-1/16 00:30 html 入门, html 骨架, 基本标签(h, p, br, hr, b, u, i, s, strong, ins, em, del, img)https://www.bilibili.com/video/BV1Kg411T7t9?p=14
-2. 1/16 14:00 - 17：00 学完 html 认知（图片 音频 视频 链接 相对路径 绝对路径）https://www.bilibili.com/video/BV1Kg411T7t9?p=24
-3. 1/17 14:00- 14：30 三种列表+table 无序，有序，自定义（ul。ol。bl
-4. 1/17 22：00-23：30 表单系列，input 表单https://www.bilibili.com/video/BV1Kg411T7t9?p=37
-5. 1/19 select button textarea lable https://www.bilibili.com/video/BV1Kg411T7t9?p=41
-6. 1/20 布局标签，div 和 span ，HTML 字符变体 https://www.bilibili.com/video/BV1Kg411T7t9?p=45
-7. 1/21 css 基础 css 引入方式, css 选择器, css 字体样式, https://www.bilibili.com/video/BV1Kg411T7t9?p=53
-8. 1/25 css 文本样式 text-indent text-align text-decoration line-high 行高 颜色标识https://www.bilibili.com/video/BV1Kg411T7t9?p=62
- ---
+---
 1. 3/6 复习之前内容，学习完成css基础[https://www.bilibili.com/video/BV1Kg411T7t9?p=66](https://www.bilibili.com/video/BV1Kg411T7t9?p=66)
 2. 3/8 css进阶 复合选择器： 后代选择器 空格， 子代选择器 > ，并集选择器 ，，交集选择器 直接连接，hover伪类选择器 [https://www.bilibili.com/video/BV1Kg411T7t9?p=71](https://www.bilibili.com/video/BV1Kg411T7t9?p=71)
 3. 3/9 css背景颜色 背景图片 背景平铺 背景位置 背景属性连写[https://www.bilibili.com/video/BV1Kg411T7t9?p=77](https://www.bilibili.com/video/BV1Kg411T7t9?p=77)
@@ -22,7 +14,7 @@
 13. 3/26 精灵图片 文字阴影 盒子阴影 过渡 [https://www.bilibili.com/video/BV1Kg411T7t9?p=173](https://www.bilibili.com/video/BV1Kg411T7t9?p=173)
 14. 3/27 合并表格边框 css制作三角形 选择器拓展 l v h a HTML 骨架 SEO三大标签 ICO 版心 CSS书写顺序 文件结构 [https://www.bilibili.com/video/BV1Kg411T7t9?p=177](https://www.bilibili.com/video/BV1Kg411T7t9?p=177)
 15. 3/30 做了两天案例, 有点难 第一部分完成 进入第二部分 [https://www.bilibili.com/video/BV1xq4y1q7jZ](https://www.bilibili.com/video/BV1xq4y1q7jZ)
-1. 感冒难受了几天, 没有学习
+---1. 感冒难受了几天, 没有学习
 2. 4/3 字体图标
 3. 4.4 平面转换 translate rotate scale transform-origin 坐标原点 多重转换[https://www.bilibili.com/video/BV1xq4y1q7jZ?p=17](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=17)
 4. 4/5 平面转换 渐变 案例 [https://www.bilibili.com/video/BV1xq4y1q7jZ?p=21](https://www.bilibili.com/video/BV1xq4y1q7jZ?p=21)
@@ -50,6 +42,9 @@
 6. 4/27 对象 创建对象的三种方法 构造函数 new 关键字执行过程 内置对象 math [https://www.bilibili.com/video/BV1ux411d75J?p=161](https://www.bilibili.com/video/BV1ux411d75J?p=161)
 7. 4/28 内置对象 math 对象 date 对象 [https://www.bilibili.com/video/BV1ux411d75J?p=170](https://www.bilibili.com/video/BV1ux411d75J?p=170)
 8. 4/29 string 对象, array 对象 以及内置的方法, 数据类型的内存分配 , 数据类型的传参 [https://www.bilibili.com/video/BV1k4411w7sV](https://www.bilibili.com/video/BV1k4411w7sV)
+
+---
+
 1. 5/1 获取元素的几种方法 通过 id 通过标签名 通过 html5 新增的方法 通过类名 通过选择器 还有简单的事件基础 如何操作元素 [https://www.bilibili.com/video/BV1k4411w7sV?p=16](https://www.bilibili.com/video/BV1k4411w7sV?p=16)
 2. 开摆了几天...
 3. 5/4 循环精灵图, 显示隐蔽密码框 通过两种方式修改样式 style 和 classname 排他思想 百度换肤 [https://www.bilibili.com/video/BV1k4411w7sV?p=28](https://www.bilibili.com/video/BV1k4411w7sV?p=28)
@@ -94,3 +89,4 @@
 39. 8/11 使用 jq 的 get /post 查询提交数据 [https://www.bilibili.com/video/BV1zs411h74a?p=12](https://www.bilibili.com/video/BV1zs411h74a?p=12)
 40. 8/12 表单的属性 表单的同步提交及其缺点, 如何用 ajax 进行表单的提交[https://www.bilibili.com/video/BV1zs411h74a?p=26](https://www.bilibili.com/video/BV1zs411h74a?p=26)
 41. 8/14 模板引擎[ https://www.bilibili.com/video/BV1zs411h74a?p=31](https://www.bilibili.com/video/BV1zs411h74a?p=31)
+42. 8/15 模板引擎案例 新闻列表 模板引擎原理 高级正则 [https://www.bilibili.com/video/BV1zs411h74a?p=38](https://www.bilibili.com/video/BV1zs411h74a?p=38)
