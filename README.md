@@ -1,3 +1,11 @@
+1. 2022/1/15 晚 21:00-1/16 00:30 html 入门, html 骨架, 基本标签(h, p, br, hr, b, u, i, s, strong, ins, em, del, img)https://www.bilibili.com/video/BV1Kg411T7t9?p=14
+2. 1/16 14:00 - 17：00 学完 html 认知（图片 音频 视频 链接 相对路径 绝对路径）https://www.bilibili.com/video/BV1Kg411T7t9?p=24
+3. 1/17 14:00- 14：30 三种列表+table 无序，有序，自定义（ul。ol。bl
+4. 1/17 22：00-23：30 表单系列，input 表单https://www.bilibili.com/video/BV1Kg411T7t9?p=37
+5. 1/19 select button textarea lable https://www.bilibili.com/video/BV1Kg411T7t9?p=41
+6. 1/20 布局标签，div 和 span ，HTML 字符变体 https://www.bilibili.com/video/BV1Kg411T7t9?p=45
+7. 1/21 css 基础 css 引入方式, css 选择器, css 字体样式, https://www.bilibili.com/video/BV1Kg411T7t9?p=53
+8. 1/25 css 文本样式 text-indent text-align text-decoration line-high 行高 颜色标识https://www.bilibili.com/video/BV1Kg411T7t9?p=62
 ---
 1. 3/6 复习之前内容，学习完成css基础[https://www.bilibili.com/video/BV1Kg411T7t9?p=66](https://www.bilibili.com/video/BV1Kg411T7t9?p=66)
 2. 3/8 css进阶 复合选择器： 后代选择器 空格， 子代选择器 > ，并集选择器 ，，交集选择器 直接连接，hover伪类选择器 [https://www.bilibili.com/video/BV1Kg411T7t9?p=71](https://www.bilibili.com/video/BV1Kg411T7t9?p=71)
