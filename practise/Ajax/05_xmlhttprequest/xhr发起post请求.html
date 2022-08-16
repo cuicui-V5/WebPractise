@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let res;
+            //创建xhr对象
+            let xhr = new XMLHttpRequest();
+            // 调用open函数
+            xhr.open("post", "http://www.liulongbin.top:3006/api/addbook");
+            // 设置Content-Type
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+            // 调用send函数
+            xhr.send("bookname=得到&author=得adaw&publisher=dawdawdawd");
+            // 监听readystatuschange事件
+            xhr.addEventListener("readystatechange", function (e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    res = xhr.responseText;
+                    console.log(res);
+                    let resObj=JSON.parse(res);
+                    console.log(resObj);
+                }
+            });
+        </script>
+    </body>
+</html>
