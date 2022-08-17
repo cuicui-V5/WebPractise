@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form id="form">
+            <input type="text" name="name" id="">
+            <input type="text" name="sex" id="">
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            let form = document.querySelector("#form");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                let xhr = new XMLHttpRequest();
+
+                xhr.open("post", "http://www.liulongbin.top:3006/api/formdata");
+                xhr.setRequestHeader(
+                    "Content-Type",
+                    "application/x-www-form-urlencoded"
+                );
+                let fd = new FormData(form);
+                xhr.send(fd);
+                xhr.addEventListener("readystatechange", function () {
+                    if (xhr.readyState == 4) {
+                        console.log(JSON.parse(xhr.responseText));
+                    }
+                });
+                xhr.addEventListener("timeout", function () {
+                    console.log("请求超时!");
+                });
+            });
+        </script>
+    </body>
+</html>

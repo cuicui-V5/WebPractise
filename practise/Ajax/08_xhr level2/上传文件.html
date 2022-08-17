@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form>
+            <input type="file" name="" id="file" multiple />
+
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            let btn = document.querySelector("button");
+            let ipt_file = document.querySelector("#file");
+            btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                if (ipt_file.files.length <= 0) {
+                    return alert("请选择文件!");
+                } else {
+                    //后续逻辑
+                    let fd = new FormData();
+                    fd.append("avator", ipt_file.files[0]);
+
+                    let xhr = new XMLHttpRequest();
+                    xhr.open("post","url");
+                    xhr.setRequestHeader(
+                        "Content-Type",
+                        "application/x-www-form-urlencoded"
+                    );
+                    xhr.send(fd);
+                    xhr.addEventListener("readystatechange", function () {});
+                }
+            });
+        </script>
+    </body>
+</html>
