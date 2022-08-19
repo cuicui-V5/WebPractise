@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="./bootstrap-3.4.1-dist/css/bootstrap.css"
+        />
     </head>
     <body>
         <form>
@@ -12,26 +16,69 @@
 
             <button type="submit">Submit</button>
         </form>
+        <div class="progress" style="width: 400px; margin: 10px">
+            <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="60"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 0%"
+            >
+                0%
+            </div>
+        </div>
+        <img src="" alt="" />
         <script>
             let btn = document.querySelector("button");
             let ipt_file = document.querySelector("#file");
+            let img = document.querySelector("img");
+            let progressBar = document.querySelector(".progress-bar");
             btn.addEventListener("click", function (e) {
                 e.preventDefault();
-                if (ipt_file.files.length <= 0) {
+                let files = ipt_file.files;
+                if (files.length <= 0) {
                     return alert("请选择文件!");
                 } else {
                     //后续逻辑
                     let fd = new FormData();
-                    fd.append("avator", ipt_file.files[0]);
+                    fd.append("avatar", files[0]);
 
                     let xhr = new XMLHttpRequest();
-                    xhr.open("post","url");
-                    xhr.setRequestHeader(
-                        "Content-Type",
-                        "application/x-www-form-urlencoded"
+                    xhr.upload.addEventListener("progress", function (e) { //进度条
+                        if (e.lengthComputable) {
+                            let progress = Math.ceil(
+                                (e.loaded / e.total) * 100
+                            );
+                            console.log("uploading... " + progress + "%");
+                            progressBar.innerHTML = `${progress}%`;
+                            progressBar.style.width = `${progress}%`;
+                        }
+                    });
+                    //文件上传完成事件
+                    xhr.upload.addEventListener("load",function () {
+                        progressBar.className="progress-bar progress-bar-success";
+                    })
+
+
+                    xhr.open(
+                        "post",
+                        "http://www.liulongbin.top:3006/api/upload/avatar"
                     );
                     xhr.send(fd);
-                    xhr.addEventListener("readystatechange", function () {});
+                    xhr.addEventListener("readystatechange", function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            let data = JSON.parse(xhr.responseText);
+                            if (data.status !== 200) {
+                                console.log("上传出错!" + data.message);
+                            } else {
+                                console.log("上传成功" + data.message);
+                                console.log(data);
+                                img.src =
+                                    "http://www.liulongbin.top:3006" + data.url;
+                            }
+                        }
+                    });
                 }
             });
         </script>
