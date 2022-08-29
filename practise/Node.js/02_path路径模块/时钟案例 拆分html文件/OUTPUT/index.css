@@ -1,0 +1,57 @@
+@keyframes ami {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .clock {
+                position: relative;
+            }
+            .sec {
+                position: absolute;
+                margin: 300px 400px;
+                width: 300px;
+                height: 10px;
+                background-color: #f00;
+                animation: ami 1s steps(60) infinite;
+                transform-origin: left;
+            }
+            .min {
+                position: absolute;
+                margin: 300px 400px;
+                width: 200px;
+                height: 20px;
+                background-color: #0f0;
+                animation: ami 60s steps(60) infinite;
+                transform-origin: left;
+            }
+            .hur {
+                position: absolute;
+                margin: 300px 400px;
+                width: 100px;
+                height: 10px;
+                background-color: #00f;
+                animation: ami 3600s steps(60) infinite;
+                transform-origin: left;
+            }
+            @keyframes run {
+                from {
+                    background-position: 0 0;
+                    background-color: red;
+                }
+                to {
+                    background-position: 1680px 0;
+                    background-color: green;
+                }
+            }
+            .run {
+                width: 140px;
+                height: 140px;
+                background-color: pink;
+                background-image: url(./bg.png);
+                background-position: 0px 0;
+                animation: run 1s steps(12) infinite;
+            }
