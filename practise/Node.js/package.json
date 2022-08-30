@@ -1,5 +1,17 @@
 {
   "dependencies": {
-    "@types/node": "^18.7.13"
-  }
+    "@types/node": "^18.7.13",
+    "moment": "^2.29.4"
+  },
+  "name": "node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
