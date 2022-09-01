@@ -14,7 +14,7 @@ JavaScript阶段：
 * [X] JavaScript核心Web APIs[https://www.bilibili.com/video/BV1k4411w7sV](https://www.bilibili.com/video/BV1k4411w7sV)-->
 * [X] [2019全新javaScript进阶面向对象ES6_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Kt411w7MP?p=1)
 * [X] [黑马程序员前端基础必备教程|jQuery网页开发案例精讲_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1a4411w7Gx)
-* [ ] 数据交互 & 异步编程Ajax\Git[https://www.bilibili.com/video/BV1zs411h74a](https://www.bilibili.com/video/BV1zs411h74a)
+* [X] 数据交互 & 异步编程Ajax\Git[https://www.bilibili.com/video/BV1zs411h74a](https://www.bilibili.com/video/BV1zs411h74a)
 
 
 VUE开发：
