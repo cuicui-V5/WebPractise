@@ -19,7 +19,7 @@ JavaScript阶段：
 
 VUE开发：
 
-* [ ] 框架前置课Nodejs&es6[https://www.bilibili.com/video/BV1a34y167AZ](https://www.bilibili.com/video/BV1a34y167AZ)-->
+* [x] 框架前置课Nodejs&es6[https://www.bilibili.com/video/BV1a34y167AZ](https://www.bilibili.com/video/BV1a34y167AZ)-->
 * [ ] Vue2+Vue3全套[https://www.bilibili.com/video/BV1zq4y1p7ga](https://www.bilibili.com/video/BV1zq4y1p7ga)
 
 React + 微信小程序：
