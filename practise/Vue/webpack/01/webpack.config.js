@@ -11,6 +11,22 @@ module.exports = {
         path: path.join(__dirname, "./dist"), //输出文件的存放位置
         filename: "bundle.js", //输出文件的命名
     },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.less$/,
+                use: ["style-loader", "css-loader", "less-loader"],
+            },
+            {
+                test: /\.jpg|png|gif$/,
+                use: ["url-loader?limit=20000"],
+            },
+        ],
+    },
     plugins: [htmlWebpackPlugin],
     devServer: {
         open: true,
