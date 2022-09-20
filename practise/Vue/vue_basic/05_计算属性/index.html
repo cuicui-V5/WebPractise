@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="root">
+            姓:
+            <input type="text" name="" id="" v-model:value="firstName" />
+            <br />
+            名:
+            <input type="text" name="" id="" v-model:value="lastName" />
+            <br />
+            全名:{{fullName}}
+        </div>
+        <script src="./js/vue.js"></script>
+        <script>
+            const vm = new Vue({
+                el: ".root",
+                data: {
+                    firstName: "张",
+                    lastName: "三",
+                },
+                computed: {
+                    // fullName: { 完整写法
+                    //     get() {
+                    //         return this.firstName + "-" + this.lastName;
+                    //     },
+                    // },
+                    fullName() {
+                        //简写, 不需要setter的情况下
+
+                        return this.firstName + "-" + this.lastName;
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
