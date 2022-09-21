@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./js/vue.js"></script>
+    </head>
+    <body>
+        <div class="root">
+            <ul>
+                <li v-for="(p,i) in persons">{{i}} 姓名: {{p.name}} 年龄: {{p.age}}</li>
+            </ul>
+        </div>
+        <script>
+            new Vue({
+                el: ".root",
+                data: {
+                    persons: [
+                        { id: 1, name: "tim", age: 18 },
+                        { id: 2, name: "sam", age: 20 },
+                        { id: 3, name: "bob", age: 16 },
+                    ],
+                },
+            });
+        </script>
+    </body>
+</html>
