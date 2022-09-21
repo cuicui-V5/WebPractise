@@ -36,12 +36,22 @@
                 //         },
                 //     },
                 // },
+                // 简写形式 , 假如不需要配置项的话
+                // watch: {
+                //     info(newVal, oldVal) {
+                //         console.log(newVal, oldVal);
+                //     },
+                // },
             });
-            //外部定义监视属性
-            vm.$watch("info", {
-                handler(newVal, oldVal) {
-                    console.log(newVal, oldVal);
-                },
+            // //外部定义监视属性
+            // vm.$watch("info", {
+            //     handler(newVal, oldVal) {
+            //         console.log(newVal, oldVal);
+            //     },
+            // });
+            // 外部定义的简写形式 假如不需要配置项
+            vm.$watch("info", function (newVal, oldVal) {
+                console.log(newVal, oldVal);
             });
             console.log(vm);
         </script>
