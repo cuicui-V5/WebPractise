@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>收集表单数据</title>
+        <script src="./js/vue.js"></script>
+    </head>
+    <body>
+        <h1>信息收集</h1>
+        <form class="root">
+            姓名:
+            <input type="text" v-model="info.name" />
+            <br />
+            年龄:
+            <input type="number" v-model.number="info.age" />
+            <br />
+            密码:
+            <input type="password" v-model="info.password" />
+            <br />
+            性别:
+            <input type="radio" value="男" v-model="info.sex" />
+            男
+            <input type="radio" value="女" v-model="info.sex" />
+            女
+            <br />
+            爱好:
+            <input type="checkbox" v-model="info.hobby" value="吃饭" />
+            吃饭
+            <input type="checkbox" v-model="info.hobby" value="喝水" />
+            喝水
+            <input type="checkbox" v-model="info.hobby" value="玩游戏" />
+            玩游戏
+            <br />
+            出生地:
+            <select v-model="info.city">
+                <option value="北京">北京</option>
+                <option value="广州">广州</option>
+                <option value="深圳">深圳</option>
+            </select>
+            <br />
+            备注:
+            <textarea v-model.lazy="info.other"></textarea>
+            <br />
+            <input type="checkbox" v-model="info.agree" />
+            同意用户协议
+            <br />
+
+            <button @click.prevent="submit">提交</button>
+        </form>
+        <script>
+            new Vue({
+                el: ".root",
+                data: {
+                    info: {
+                        name: "",
+                        age: 18,
+                        sex: "",
+                        hobby: [],
+                        city: "深圳",
+                        other: "",
+                        agree: false,
+                    },
+                },
+                methods: {
+                    submit() {
+                        console.log("submit");
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
