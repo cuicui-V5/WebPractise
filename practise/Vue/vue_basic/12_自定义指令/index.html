@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./js/vue.js"></script>
+    </head>
+    <body>
+        <div class="root">
+            <div v-demo="n"></div>
+            <button v-on:click.prevent="n++">++</button>
+        </div>
+        <script>
+            Vue.directive("test", function (ele, binding) {
+                {
+                    //ele: 绑定的元素, binding绑定对象
+                    ele.innerText = binding.value * 10;
+                }
+            });
+            new Vue({
+                el: ".root",
+                data: {
+                    n: 1,
+                },
+                directives: {
+                    // demo(ele, binding) {
+                    //     //ele: 绑定的元素, binding绑定对象
+                    //     ele.innerText = binding.value * 10;
+                    // },
+                    demo: {
+                        bind(ele, binding) {
+                            // 绑定时触发
+                            console.log("绑定了");
+                            ele.innerText = binding.value * 10;
+                        },
+                        inserted(ele, binding) {
+                            // 插入时触发
+                            console.log("插入了");
+                        },
+                        update(ele, binding) {
+                            // 更新时触发
+                            console.log("更新了");
+                            ele.innerText = binding.value * 10;
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
