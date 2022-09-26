@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>生命周期测试</title>
+        <script src="./js/vue.js"></script>
+    </head>
+    <body>
+        <div class="root">
+            <div v-text="n"></div>
+            <button v-on:click.prevent="n++">n++</button>
+        </div>
+        <script>
+            new Vue({
+                el: ".root",
+                data: {
+                    n: 0,
+                },
+                beforeCreate() {
+                    // 此时还没有初始化数据监视， 数据代理
+                    // 此时无法访问data和method
+                    console.log("beforeCreate");
+                    console.log(this.n);
+                },
+                created() {
+                    // 完成数据监视， 数据代理， 但是没有进行DOM模板编译
+                    // 此时可以访问data和methods等数据
+                    console.log("created");
+                    console.log(this.n);
+                },
+                beforeMount() {
+                    // 此时页面呈现的是未经编译的DOM模板
+                    // 此时进行的DOM操作无效
+                    console.log("beforeMount");
+                },
+                mounted() {
+                    // DOM模板编译完成,对DOM的操作均有效
+                    console.log("mounted");
+                },
+                beforeUpdate() {
+                    // 此时数据是新的, 页面是旧的
+                    console.log("beforeUpdate");
+                },
+                updated() {
+                    // 完成页面更新
+                    console.log("updated");
+                },
+                beforeDestroy() {
+                    // 此时进行收尾操作
+                    console.log("beforeDestroy");
+                },
+                destroyed() {
+                    console.log("destroyed");
+                },
+            });
+        </script>
+    </body>
+</html>
