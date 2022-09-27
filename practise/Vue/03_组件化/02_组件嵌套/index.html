@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div class="root"></div>
+        <script>
+            const student = Vue.extend({
+                template: `<h2 v-text="name"></h2>`,
+                data() {
+                    return {
+                        name: "hello student",
+                    };
+                },
+            });
+            const school = Vue.extend({
+                template: `<div><h2 v-text="name"></h2> <student></student></div>`,
+                data() {
+                    return {
+                        name: "hello school",
+                    };
+                },
+                components: {
+                    student,
+                },
+            });
+
+            const app = Vue.extend({
+                template: `
+                <div><school></school></div>
+                        `,
+                components: {
+                    school,
+                },
+            });
+            new Vue({
+                el: ".root",
+                template: "<app> </app>",
+                components: {
+                    app,
+                },
+            });
+        </script>
+    </body>
+</html>
