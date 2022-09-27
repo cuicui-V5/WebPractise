@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>组件</title>
+        <script src="../js/vue.js"></script>
+    </head>
+    <body>
+        <!-- 使用组件的步骤 -->
+        <!-- 1. 定义组件 -->
+        <!-- 2. 注册组件 -->
+        <!-- 3. 使用组件 -->
+
+        <div class="root">
+            <!-- 使用组件 -->
+            <comp1></comp1>
+            <comp2></comp2>
+        </div>
+
+        <script>
+            // 定义组件
+            const comp1 = Vue.extend({
+                template: `<div v-text="name"></div>`,
+                data() {
+                    return {
+                        name: "这是组件1",
+                    };
+                },
+            });
+            const comp2 = Vue.extend({
+                template: `<div v-text="name"></div>`,
+                data() {
+                    return {
+                        name: "这是组件2",
+                    };
+                },
+            });
+            // 全局注册
+            Vue.component("comp1", comp1);
+            Vue.component("comp2", comp2);
+
+            new Vue({
+                el: ".root",
+                // 局部注册组件
+                components: {
+                    comp1,
+                    comp2,
+                },
+            });
+        </script>
+    </body>
+</html>
