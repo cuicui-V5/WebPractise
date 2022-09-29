@@ -3,7 +3,7 @@
     "name": "09_promise",
     "version": "1.0.0",
     "description": "",
-    "main": "04_promise_all.js",
+    "main": "05_基于Promise封装自己的方法.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
