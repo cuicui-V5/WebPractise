@@ -1,9 +1,9 @@
 import App from "./App.vue";
 import Vue from "vue";
 
-import { plugin } from "./plugins/plugin";
+import { mixin } from "./components/mixin.js";
 
-Vue.use(plugin);
+Vue.mixin(mixin);
 
 new Vue({
     el: ".root",

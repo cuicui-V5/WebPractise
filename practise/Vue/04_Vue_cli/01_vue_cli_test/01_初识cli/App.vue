@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1 ref="h1">hello Vue!</h1>
+    <h1>hello Vue!</h1>
     <MySchool />
-    <MyStudent name="小明" sex="男" />
-    <button @click="show">showDom</button>
+    <MyStudent />
   </div>
 </template>
 
@@ -12,19 +11,14 @@ import MySchool from "./components/MySchool.vue";
 import MyStudent from "./components/MyStudent.vue";
 export default {
   name: "App",
-  components: {
-    MySchool,
-    MyStudent,
-  },
   data: function () {
     return {
       id: 1,
     };
   },
-  methods: {
-    show() {
-      console.log(this.$refs);
-    },
+  components: {
+    MySchool,
+    MyStudent,
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <div>
     <h1 ref="h1">hello Vue!</h1>
     <MySchool />
-    <MyStudent name="小明" sex="男" />
+    <MyStudent />
     <button @click="show">showDom</button>
   </div>
 </template>
