@@ -1,13 +1,20 @@
 <template>
     <div class="todo-header">
         <input type="text"
-               placeholder="请输入你的任务名称，按回车键确认" />
+               placeholder="请输入你的任务名称，按回车键确认"
+               @keydown.enter="add" />
     </div>
 </template>
 
 <script>
 export default {
     name: "TodoHeader",
+    methods: {
+        add(e) {
+            console.log("add");
+            console.log(e.target.value);
+        }
+    },
 }
 </script>
 

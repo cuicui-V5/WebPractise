@@ -1,10 +1,8 @@
 <template>
     <ul class="todo-main">
-        <TodoItemVue></TodoItemVue>
-        <TodoItemVue></TodoItemVue>
-        <TodoItemVue></TodoItemVue>
-        <TodoItemVue></TodoItemVue>
-        <TodoItemVue></TodoItemVue>
+        <TodoItemVue v-for="(item) in todo"
+                     :key="item.id"
+                     :todo="item"></TodoItemVue>
     </ul>
 </template>
 
@@ -15,7 +13,25 @@ export default {
     name: "TodoList",
     components: {
         TodoItemVue
-    }
+    },
+    data() {
+        return {
+            todo: [{
+                id: "001",
+                thing: "吃饭",
+                done: false
+            }, {
+                id: "002",
+                thing: "睡觉",
+                done: false
+            }, {
+                id: "003",
+                thing: "写代码",
+                done: true
+            },
+            ]
+        }
+    },
 }
 </script>
 
