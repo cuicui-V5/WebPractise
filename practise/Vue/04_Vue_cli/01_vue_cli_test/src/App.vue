@@ -2,8 +2,10 @@
     <div id="root">
         <div class="todo-container">
             <div class="todo-wrap">
-                <TodoHeaderVue></TodoHeaderVue>
-                <TodoListVue></TodoListVue>
+                <TodoHeaderVue :addTodo="addTodo"></TodoHeaderVue>
+                <TodoListVue :todo="todo"
+                             :changeDone="changeDone"
+                             :deleteTodo="deleteTodo"></TodoListVue>
                 <TodoFooterVue></TodoFooterVue>
             </div>
         </div>
@@ -19,18 +21,42 @@ export default {
     components: {
         TodoHeaderVue,
         TodoListVue,
-        // TodoItemVue,
         TodoFooterVue,
     },
-    data: function () {
+    data() {
         return {
-            id: 1,
-        };
+            todo: [{
+                id: "001",
+                thing: "吃饭",
+                done: false
+            }, {
+                id: "002",
+                thing: "睡觉",
+                done: false
+            }, {
+                id: "003",
+                thing: "写代码",
+                done: true
+            },
+            ]
+        }
     },
     methods: {
-        show() {
-            console.log(this.$refs);
+        addTodo(todoItemObj) {
+            console.log(todoItemObj);
+            this.todo.unshift(todoItemObj)
         },
+        changeDone(id) {
+            this.todo.forEach(element => {
+                if (element.id === id) {
+                    element.done = !element.done
+                    return;
+                }
+            });
+        },
+        deleteTodo(id) {
+            this.todo = this.todo.filter(item => item.id !== id)
+        }
     },
 };
 </script>

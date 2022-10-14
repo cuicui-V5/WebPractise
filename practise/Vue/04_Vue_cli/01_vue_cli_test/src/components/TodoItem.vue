@@ -1,18 +1,25 @@
 <template>
     <li>
         <label>
-            <input type="checkbox" />
+            <input type="checkbox"
+                   :checked="todo.done"
+                   @change="changeDone(todo.id)" />
             <span>{{todo.thing}}</span>
         </label>
         <button class="btn btn-danger"
-                style="display:none">删除</button>
+                @click="deleteTodo(todo.id)">删除</button>
     </li>
 </template>
 
 <script>
 export default {
     name: "TodoItem",
-    props: ["todo"],
+    data() {
+        return {
+            flag: true
+        }
+    },
+    props: ["todo", "changeDone", "deleteTodo"],
 }
 </script>
 
@@ -50,5 +57,13 @@ li:before {
 
 li:last-child {
     border-bottom: none;
+}
+
+li:hover button {
+    display: block;
+}
+
+li:hover {
+    background-color: rgba(153, 153, 153, 0.116);
 }
 </style>

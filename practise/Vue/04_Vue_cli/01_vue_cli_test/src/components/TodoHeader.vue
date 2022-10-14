@@ -7,12 +7,22 @@
 </template>
 
 <script>
+import { nanoid } from "nanoid";
 export default {
     name: "TodoHeader",
+    props: ["addTodo"],
     methods: {
         add(e) {
-            console.log("add");
-            console.log(e.target.value);
+            //生成一个新条目
+            if (!e.target.value) return alert("请输入内容")
+            const todoItem = {
+                id: nanoid(),
+                thing: e.target.value,
+                done: false
+            }
+            this.addTodo(todoItem)
+            e.target.value = ""
+
         }
     },
 }

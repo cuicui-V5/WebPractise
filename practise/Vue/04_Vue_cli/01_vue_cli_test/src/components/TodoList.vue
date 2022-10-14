@@ -2,7 +2,9 @@
     <ul class="todo-main">
         <TodoItemVue v-for="(item) in todo"
                      :key="item.id"
-                     :todo="item"></TodoItemVue>
+                     :todo="item"
+                     :changeDone="changeDone"
+                     :deleteTodo="deleteTodo"></TodoItemVue>
     </ul>
 </template>
 
@@ -14,24 +16,10 @@ export default {
     components: {
         TodoItemVue
     },
-    data() {
-        return {
-            todo: [{
-                id: "001",
-                thing: "吃饭",
-                done: false
-            }, {
-                id: "002",
-                thing: "睡觉",
-                done: false
-            }, {
-                id: "003",
-                thing: "写代码",
-                done: true
-            },
-            ]
-        }
-    },
+    props: ["todo", "changeDone", "deleteTodo"],
+    mounted() {
+        console.log(this.todo);
+    }
 }
 </script>
 
