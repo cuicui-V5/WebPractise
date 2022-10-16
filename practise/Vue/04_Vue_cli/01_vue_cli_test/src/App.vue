@@ -3,19 +3,26 @@
         <div class="todo-container">
             <div class="todo-wrap">
                 <TodoHeaderVue :addTodo="addTodo"></TodoHeaderVue>
-                <TodoListVue :todo="todo"
-                             :changeDone="changeDone"
-                             :deleteTodo="deleteTodo"></TodoListVue>
-                <TodoFooterVue></TodoFooterVue>
+                <TodoListVue
+                    :todo="todo"
+                    :changeDone="changeDone"
+                    :deleteTodo="deleteTodo"
+                ></TodoListVue>
+                <TodoFooterVue
+                    v-if="todo.length"
+                    :todo="todo"
+                    :doneAll="doneAll"
+                    :clearAll="clearAll"
+                ></TodoFooterVue>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import TodoHeaderVue from "./components/TodoHeader.vue"
-import TodoListVue from './components/TodoList.vue'
-import TodoFooterVue from "./components/TodoFooter.vue"
+import TodoHeaderVue from "./components/TodoHeader.vue";
+import TodoListVue from "./components/TodoList.vue";
+import TodoFooterVue from "./components/TodoFooter.vue";
 export default {
     name: "App",
     components: {
@@ -25,38 +32,49 @@ export default {
     },
     data() {
         return {
-            todo: [{
-                id: "001",
-                thing: "吃饭",
-                done: false
-            }, {
-                id: "002",
-                thing: "睡觉",
-                done: false
-            }, {
-                id: "003",
-                thing: "写代码",
-                done: true
-            },
-            ]
-        }
+            todo: [
+                {
+                    id: "001",
+                    thing: "吃饭",
+                    done: false,
+                },
+                {
+                    id: "002",
+                    thing: "睡觉",
+                    done: false,
+                },
+                {
+                    id: "003",
+                    thing: "写代码",
+                    done: true,
+                },
+            ],
+        };
     },
     methods: {
         addTodo(todoItemObj) {
             console.log(todoItemObj);
-            this.todo.unshift(todoItemObj)
+            this.todo.unshift(todoItemObj);
         },
         changeDone(id) {
             this.todo.forEach(element => {
                 if (element.id === id) {
-                    element.done = !element.done
+                    element.done = !element.done;
                     return;
                 }
             });
         },
         deleteTodo(id) {
-            this.todo = this.todo.filter(item => item.id !== id)
-        }
+            this.todo = this.todo.filter(item => item.id !== id);
+        },
+        doneAll(checked) {
+            this.todo.forEach(item => {
+                item.done = checked;
+            });
+        },
+        clearAll() {
+            this.todo = [];
+        },
     },
 };
 </script>
