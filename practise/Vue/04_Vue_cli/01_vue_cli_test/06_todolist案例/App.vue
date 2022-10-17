@@ -32,23 +32,7 @@ export default {
     },
     data() {
         return {
-            todo: [
-                {
-                    id: "001",
-                    thing: "吃饭",
-                    done: false,
-                },
-                {
-                    id: "002",
-                    thing: "睡觉",
-                    done: false,
-                },
-                {
-                    id: "003",
-                    thing: "写代码",
-                    done: true,
-                },
-            ],
+            todo: JSON.parse(localStorage.getItem("todo")) || [],
         };
     },
     methods: {
@@ -74,6 +58,14 @@ export default {
         },
         clearAll() {
             this.todo = [];
+        },
+    },
+    watch: {
+        todo: {
+            deep: true,
+            handler(val) {
+                localStorage.setItem("todo", JSON.stringify(val));
+            },
         },
     },
 };

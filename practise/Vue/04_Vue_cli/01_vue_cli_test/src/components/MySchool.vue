@@ -1,7 +1,8 @@
 <template>
     <div>
         <h1 id="school">学校名称是 {{ name }}</h1>
-        <button @click="emit">btn</button>
+        <button @click="emit">点我触发事件</button>
+        <button @click="unbind">点我解绑事件</button>
     </div>
 </template>
 
@@ -16,6 +17,9 @@ export default {
     methods: {
         emit() {
             this.$emit("myEvent", "hello");
+        },
+        unbind() {
+            this.$off("myEvent");
         },
     },
 };
