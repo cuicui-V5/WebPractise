@@ -2,13 +2,23 @@
     <li>
         <label>
             <input type="checkbox" :checked="todo.done" @change="change" />
-            <span>{{ todo.thing }}</span>
+            <span v-show="!todo.isEdit">{{ todo.thing }}</span>
+            <input
+                type="text"
+                v-show="todo.isEdit"
+                :value="todo.thing"
+                @blur="inputBlur($event)"
+                ref="input"
+            />
         </label>
         <button class="btn btn-danger" @click="deleteTodo">删除</button>
+        <button class="btn btn-edit" @click="updateTdo">编辑</button>
     </li>
 </template>
 
 <script>
+import PubSub from "pubsub-js";
+
 export default {
     name: "TodoItem",
     data() {
@@ -17,12 +27,28 @@ export default {
         };
     },
     props: ["todo"],
+    updated() {},
     methods: {
         change() {
             this.$bus.$emit("changeDone", this.todo.id);
         },
         deleteTodo() {
-            this.$bus.$emit("deleteTodo", this.todo.id);
+            // this.$bus.$emit("deleteTodo", this.todo.id);
+            PubSub.publish("delTodo", this.todo.id);
+        },
+        updateTdo() {
+            // if (!Object.prototype.hasOwnProperty.call(this.todo, "isEdit")) {
+            //     console.log("没有isEdit");
+            this.$set(this.todo, "isEdit", true);
+            this.$nextTick(function () {
+                this.$refs.input.focus();
+            });
+
+            // }
+        },
+        inputBlur(e) {
+            this.$set(this.todo, "isEdit", false);
+            this.$bus.$emit("updateTdo", this.todo.id, e.target.value);
         },
     },
 };
