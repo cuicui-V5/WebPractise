@@ -1,7 +1,7 @@
 <template>
     <div class="root">
         <h1>hello world</h1>
-        <h2>现在的数字是: {{ $store.state.num }}</h2>
+        <h2>现在的数字是: {{ num }}</h2>
         <select v-model.number="step">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -18,21 +18,26 @@
 export default {
     data() {
         return {
+            num: 0,
             step: 1,
         };
     },
     methods: {
         increase() {
-            this.$store.commit("increase", this.step);
+            this.num += this.step;
         },
         decrease() {
-            this.$store.commit("decrease", this.step);
+            this.num -= this.step;
         },
         increaseOdd() {
-            this.$store.dispatch("increaseOdd", this.step);
+            if (this.num % 2 !== 0) {
+                this.num += this.step;
+            }
         },
         increaseDelay() {
-            this.$store.dispatch("increaseDelay", this.step);
+            setTimeout(() => {
+                this.num += this.step;
+            }, 1000);
         },
     },
 };
