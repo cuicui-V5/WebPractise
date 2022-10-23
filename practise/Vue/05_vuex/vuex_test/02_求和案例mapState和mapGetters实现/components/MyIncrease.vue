@@ -11,15 +11,15 @@
             <option value="2">2</option>
             <option value="3">3</option>
         </select>
-        <button @click="increase(step)">+</button>
-        <button @click="decrease(step)">-</button>
-        <button @click="increaseOdd(step)">奇数+</button>
-        <button @click="increaseDelay(step)">延迟+</button>
+        <button @click="increase">+</button>
+        <button @click="decrease">-</button>
+        <button @click="increaseOdd">奇数+</button>
+        <button @click="increaseDelay">延迟+</button>
     </div>
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
     data() {
@@ -39,8 +39,18 @@ export default {
         ...mapGetters(["bigNum"]),
     },
     methods: {
-        ...mapActions(["increaseOdd", "increaseDelay"]),
-        ...mapMutations(["increase", "decrease"]),
+        increase() {
+            this.$store.commit("increase", this.step);
+        },
+        decrease() {
+            this.$store.commit("decrease", this.step);
+        },
+        increaseOdd() {
+            this.$store.dispatch("increaseOdd", this.step);
+        },
+        increaseDelay() {
+            this.$store.dispatch("increaseDelay", this.step);
+        },
     },
 };
 </script>

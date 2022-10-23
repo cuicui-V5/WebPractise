@@ -22,7 +22,6 @@ const actions = {
 const mutations = {
     increase(state, value) {
         console.log("mutation被执行了");
-        console.log(state, value);
         state.num += value;
     },
     decrease(state, value) {
