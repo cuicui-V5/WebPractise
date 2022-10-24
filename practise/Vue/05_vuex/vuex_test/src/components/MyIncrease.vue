@@ -1,6 +1,9 @@
 <template>
     <div class="root">
+        <hr />
+        <h1>组件1</h1>
         <h1>hello world</h1>
+        <h2>组件2 的person共有: {{ person.length }}</h2>
         <h2>现在的数字是: {{ num }}</h2>
         <h2>getter: {{ bigNum }}</h2>
         <h3>{{ name }}</h3>
@@ -28,19 +31,13 @@ export default {
         };
     },
     computed: {
-        // mapState的对象写法
-        // ...mapState({
-        //     name: "name",
-        //     age: "age",
-        //     address: "address",
-        // }),
-        // mapState的数组写法
-        ...mapState(["num", "name", "age", "address"]),
-        ...mapGetters(["bigNum"]),
+        ...mapState("increaseSpace", ["num", "name", "age", "address", "person"]),
+        ...mapState("PersonSpace", ["person"]),
+        ...mapGetters("increaseSpace", ["bigNum"]),
     },
     methods: {
-        ...mapActions(["increaseOdd", "increaseDelay"]),
-        ...mapMutations(["increase", "decrease"]),
+        ...mapActions("increaseSpace", ["increaseOdd", "increaseDelay"]),
+        ...mapMutations("increaseSpace", ["increase", "decrease"]),
     },
 };
 </script>
