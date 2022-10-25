@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 
 export default {
     data() {
@@ -33,7 +33,10 @@ export default {
     computed: {
         ...mapState("increaseSpace", ["num", "name", "age", "address", "person"]),
         ...mapState("PersonSpace", ["person"]),
-        ...mapGetters("increaseSpace", ["bigNum"]),
+        // ...mapGetters("increaseSpace", ["bigNum"]),
+        bigNum() {
+            return this.$store.getters["increaseSpace/bigNum"];
+        },
     },
     methods: {
         ...mapActions("increaseSpace", ["increaseOdd", "increaseDelay"]),

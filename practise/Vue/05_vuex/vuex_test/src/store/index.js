@@ -51,7 +51,15 @@ const increaseSpace = {
 };
 const PersonSpace = {
     namespaced: true,
-
+    actions: {
+        addPerson(context) {
+            context.state.person.unshift({
+                name: "new P",
+                age: 14,
+                sex: "male",
+            });
+        },
+    },
     state: {
         person: [
             {
