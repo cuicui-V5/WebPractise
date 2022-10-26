@@ -8,10 +8,10 @@
         <div class="row">
             <div class="col-xs-2 col-xs-offset-2">
                 <div class="list-group">
-                    <router-link class="list-group-item" active-class="active" to="/MyAbout">
+                    <router-link class="list-group-item" active-class="active" to="MyAbout">
                         About
                     </router-link>
-                    <router-link class="list-group-item" active-class="active" to="/MyHome">
+                    <router-link class="list-group-item" active-class="active" to="MyHome">
                         Home
                     </router-link>
                 </div>
