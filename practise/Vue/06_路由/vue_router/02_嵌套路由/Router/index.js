@@ -2,7 +2,6 @@ import MyAbout from "../pages/MyAbout.vue";
 import MyHome from "../pages/MyHome.vue";
 import MyHome_1 from "../pages/MyHome_1.vue";
 import MyHome_2 from "../pages/MyHome_2.vue";
-import MyDetail from "../pages/MyDetail.vue";
 
 import VueRouter from "vue-router";
 export default new VueRouter({
@@ -22,12 +21,6 @@ export default new VueRouter({
                 {
                     path: "2",
                     component: MyHome_2,
-                    children: [
-                        {
-                            path: "detail",
-                            component: MyDetail,
-                        },
-                    ],
                 },
             ],
         },
