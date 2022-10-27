@@ -11,7 +11,13 @@
                     <router-link class="list-group-item" active-class="active" to="/MyAbout">
                         About
                     </router-link>
-                    <router-link class="list-group-item" active-class="active" to="/MyHome">
+                    <router-link
+                        class="list-group-item"
+                        active-class="active"
+                        :to="{
+                            name: 'jia',
+                        }"
+                    >
                         Home
                     </router-link>
                 </div>

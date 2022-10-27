@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-            <li>编号: {{ this.$route.query.id }} tittle: {{ this.$route.query.tittle }}:</li>
+            <li>编号: {{ this.$route.params.id }} tittle: {{ this.$route.params.tittle }}:</li>
         </ul>
     </div>
 </template>

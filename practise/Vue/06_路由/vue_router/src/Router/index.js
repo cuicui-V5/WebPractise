@@ -12,6 +12,7 @@ export default new VueRouter({
             component: MyAbout,
         },
         {
+            name: "jia",
             path: "/MyHome",
             component: MyHome,
             children: [
@@ -24,7 +25,8 @@ export default new VueRouter({
                     component: MyHome_2,
                     children: [
                         {
-                            path: "detail",
+                            name: "xiangqing",
+                            path: "detail/:id/:tittle", //接收params参数
                             component: MyDetail,
                         },
                     ],
