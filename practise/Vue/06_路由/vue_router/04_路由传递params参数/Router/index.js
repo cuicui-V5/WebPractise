@@ -26,26 +26,8 @@ export default new VueRouter({
                     children: [
                         {
                             name: "xiangqing",
-                            path: "detail", //接收params参数
+                            path: "detail/:id/:tittle", //接收params参数
                             component: MyDetail,
-                            // 第一种写法, 传递固定数据
-                            // props: {
-                            //     id: 12342,
-                            //     tittle: "hello world",
-                            // },
-
-                            // 第二种写法, 设置为true, 将parmas传入props
-                            // props: true,
-
-                            // 第三种写法, 函数式, 靠返回值决定返回传递内容
-                            // props(route) { //正常写法
-                            props({ query: { id, tittle } }) {
-                                //解构赋值写法
-                                return {
-                                    id,
-                                    tittle,
-                                };
-                            },
                         },
                     ],
                 },

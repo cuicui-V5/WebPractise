@@ -9,12 +9,7 @@
 </template>
 
 <script>
-export default {
-    name: "MyHome_one",
-    beforeDestroy() {
-        console.log("destroyed");
-    },
-};
+export default {};
 </script>
 
 <style lang="less" scoped></style>

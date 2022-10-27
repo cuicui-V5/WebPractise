@@ -26,7 +26,7 @@ export default new VueRouter({
                     children: [
                         {
                             name: "xiangqing",
-                            path: "detail", //接收params参数
+                            path: "detail/:id/:tittle", //接收params参数
                             component: MyDetail,
                             // 第一种写法, 传递固定数据
                             // props: {

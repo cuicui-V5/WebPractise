@@ -16,10 +16,7 @@
                         </router-link>
                     </li>
                 </ul>
-                <!-- 这里的include必须写组件名, 组件名必须在组件内定义name -->
-                <keep-alive include="MyHome_one">
-                    <router-view></router-view>
-                </keep-alive>
+                <router-view></router-view>
             </div>
         </div>
     </div>

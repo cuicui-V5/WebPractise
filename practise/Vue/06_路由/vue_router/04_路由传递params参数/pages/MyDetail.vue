@@ -1,8 +1,7 @@
 <template>
     <div>
-        <h1>detail</h1>
         <ul>
-            <li>编号: {{ id }} tittle: {{ tittle }}:</li>
+            <li>编号: {{ this.$route.params.id }} tittle: {{ this.$route.params.tittle }}:</li>
         </ul>
     </div>
 </template>
@@ -15,7 +14,6 @@ export default {
     beforeDestroy() {
         console.log("destroyed");
     },
-    props: ["id", "tittle"],
 };
 </script>
 

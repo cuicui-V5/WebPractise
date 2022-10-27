@@ -2,27 +2,16 @@
     <div>
         <div class="row">
             <div class="col-xs-offset-2 col-xs-8">
-                <div class="page-header">
-                    <h2>Vue Router Demo</h2>
-                    <button @click="back">back</button>
-                    <button @click="forward">forward</button>
-                    <input type="text" @keydown.enter="go($event.target.value)" />
-                </div>
+                <div class="page-header"><h2>Vue Router Demo</h2></div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-2 col-xs-offset-2">
                 <div class="list-group">
-                    <router-link
-                        replace
-                        class="list-group-item"
-                        active-class="active"
-                        to="/MyAbout"
-                    >
+                    <router-link class="list-group-item" active-class="active" to="/MyAbout">
                         About
                     </router-link>
                     <router-link
-                        replace
                         class="list-group-item"
                         active-class="active"
                         :to="{
@@ -45,19 +34,7 @@
 </template>
 
 <script>
-export default {
-    methods: {
-        back() {
-            this.$router.back();
-        },
-        forward() {
-            this.$router.forward();
-        },
-        go(n) {
-            this.$router.go(n);
-        },
-    },
-};
+export default {};
 </script>
 
 <style lang="less" scoped></style>
