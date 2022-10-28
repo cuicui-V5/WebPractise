@@ -73,12 +73,6 @@ export default {
     beforeDestroy() {
         console.log("destroyed");
     },
-    activated() {
-        console.log("activated!");
-    },
-    deactivated() {
-        console.log("deactivated!");
-    },
 };
 </script>
 
