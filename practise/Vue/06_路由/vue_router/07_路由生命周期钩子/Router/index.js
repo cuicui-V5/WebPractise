@@ -5,7 +5,7 @@ import MyHome_2 from "../pages/MyHome_2.vue";
 import MyDetail from "../pages/MyDetail.vue";
 
 import VueRouter from "vue-router";
-const router = new VueRouter({
+export default new VueRouter({
     routes: [
         {
             path: "/MyAbout",
@@ -17,27 +17,16 @@ const router = new VueRouter({
             component: MyHome,
             children: [
                 {
-                    name: "home-1",
                     path: "1", //一定不能写/
                     component: MyHome_1,
-                    meta: {
-                        auth: true,
-                    },
                 },
                 {
-                    name: "home-2",
                     path: "2",
                     component: MyHome_2,
-                    meta: {
-                        auth: true,
-                    },
                     children: [
                         {
                             name: "xiangqing",
                             path: "detail", //接收params参数
-                            beforeEnter() {
-                                alert("独享路由守卫");
-                            },
                             component: MyDetail,
                             // 第一种写法, 传递固定数据
                             // props: {
@@ -64,38 +53,3 @@ const router = new VueRouter({
         },
     ],
 });
-
-// 全局前置路由守卫--传统写法
-// router.beforeEach((to, from, next) => {
-//     console.log(`从${from.path}到${to.path}`);
-//     if (["/MyHome/1", "/MyHome/2"].includes(to.path)) {
-//         if (localStorage.getItem("user") === "admin") {
-//             next();
-//         } else {
-//             alert("无权限");
-//         }
-//     } else {
-//         next();
-//     }
-// });
-
-// 全局前置路由守卫--meta写法
-router.beforeEach((to, from, next) => {
-    console.log(`从${from.path}到${to.path}`);
-    if (to.meta.auth) {
-        if (localStorage.getItem("user") === "admin") {
-            next();
-        } else {
-            alert("无权限");
-        }
-    } else {
-        next();
-    }
-});
-// 全局后置守卫
-router.afterEach((to, from) => {
-    console.log(`从${from.path}到${to.path}`);
-    document.title = to.name;
-});
-
-export default router;
