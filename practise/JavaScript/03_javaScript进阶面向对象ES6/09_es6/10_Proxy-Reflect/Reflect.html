@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const person = {
+                name: "tim",
+                age: 18,
+                sex: "男",
+            };
+            console.log(person);
+            const p = new window.Proxy(person, {
+                get(target, propName) {
+                    console.log("读取了" + propName);
+                    // return target[propName];
+                    return Reflect.get(target, propName);
+                },
+                set(target, propName, val) {
+                    console.log("修改或新增了" + propName);
+                    // target[propName] = val;
+                    Reflect.set(target, propName, val);
+                    return target[propName];
+                },
+                deleteProperty(target, propName) {
+                    console.log("删除了" + propName);
+                    // return delete target[propName];
+                    return Reflect.deleteProperty(target, propName);
+                },
+            });
+        </script>
+    </body>
+</html>

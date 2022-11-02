@@ -1,27 +1,22 @@
 <template>
-    <h1>welcome to vue3</h1>
-    <h2>name:{{ name }}</h2>
-    <h2>age:{{ age }}</h2>
-    <button @click="clickAdd">点我+1 age={{ age }}</button>
+    <TestDemo name="tim" age="18" job="hd" v-on:hello="handler">
+        <template v-slot:MySlot>
+            <h1>插槽内容</h1>
+        </template>
+    </TestDemo>
 </template>
 
 <script>
-import { ref } from "vue";
+import TestDemo from "./components/TestDemo.vue";
 export default {
     name: "App",
-    components: {},
+    components: { TestDemo },
     setup() {
-        let name = ref("tim");
-        let age = ref(18);
-        function clickAdd() {
-            age.value++;
-            console.log(age);
-        }
-        return {
-            name,
-            age,
-            clickAdd,
+        const handler = function (p) {
+            console.log("自定义事件已触发", p);
+            alert("自定义事件已触发" + p);
         };
+        return { handler };
     },
 };
 </script>
