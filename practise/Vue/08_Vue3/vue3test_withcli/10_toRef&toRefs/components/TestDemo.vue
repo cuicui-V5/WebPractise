@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import { ref, toRef, toRefs, shallowReactive } from "vue";
+import { ref, toRef, toRefs, reactive } from "vue";
 export default {
     name: "TestDemo",
     setup() {
         let num1 = ref(0);
         let num2 = ref(0);
-        // 浅reactive
-        const person = shallowReactive({
+
+        const person = reactive({
             name: "tim",
             age: 18,
             job: {
