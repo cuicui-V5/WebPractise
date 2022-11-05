@@ -1,21 +1,13 @@
 <template>
     <div class="app">
         <h1>{{ msg }}</h1>
-        <Suspense>
-            <template v-slot:default>
-                <AppSon :p="person" @hello="handler"></AppSon>
-            </template>
-            <template v-slot:fallback>
-                <h1>加载中请稍后</h1>
-            </template>
-        </Suspense>
+        <AppSon :p="person" @hello="handler"></AppSon>
     </div>
 </template>
 
 <script setup>
-import { ref, reactive, provide, isProxy, defineAsyncComponent } from "vue";
-
-const AppSon = defineAsyncComponent(() => import("./components/AppSon.vue"));
+import { ref, reactive, provide, isProxy } from "vue";
+import AppSon from "./components/AppSon.vue";
 
 let msg = ref("hello iam app");
 let test = ref({ a: 1 });
