@@ -2,7 +2,7 @@ export class ScorePanel {
     private scoreEle: HTMLElement;
     private levelEle: HTMLElement;
     private score = 0;
-    private level = 1;
+    public level = 1;
     constructor() {
         this.scoreEle = document.querySelector(".score-panel .score span")!;
         this.levelEle = document.querySelector(".score-panel .level span")!;
@@ -11,12 +11,12 @@ export class ScorePanel {
     }
 
     addScore(): void {
-        this.scoreEle.innerText = (++this.score).toString();
+        this.scoreEle.innerText = (this.score += 5).toString();
         if (this.score % 10 == 0) {
             this.addLevel();
         }
     }
-    addLevel(): void {
+    private addLevel(): void {
         if (this.level < 10) {
             this.levelEle.innerText = (++this.level).toString();
         }

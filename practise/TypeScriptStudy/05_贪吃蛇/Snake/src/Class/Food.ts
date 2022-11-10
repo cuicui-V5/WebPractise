@@ -14,7 +14,6 @@ export class Food {
             x: this.element.offsetLeft,
             y: this.element.offsetTop,
         };
-        console.log(pos);
 
         return pos;
     }
