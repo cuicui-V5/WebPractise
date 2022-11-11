@@ -13,12 +13,18 @@
         <title>贪吃蛇</title>
     </head>
     <body>
-        <button class="btn1">1</button>
-        <button class="btn2">2</button>
         <!-- 游戏主窗口 -->
         <div class="main">
             <!-- 游戏舞台 -->
             <div class="stage">
+                <div class="startMask">
+                    <h1 class="title">Snake</h1>
+                    <button class="startBtn">Start</button>
+                </div>
+                <div class="gameOverMask">
+                    <h1 class="title">Game Over</h1>
+                    <button class="gameOverBtn">Restart</button>
+                </div>
                 <div class="food">
                     <div></div>
                     <div></div>
@@ -26,7 +32,6 @@
                     <div></div>
                 </div>
                 <div class="snake">
-                    <div></div>
                     <div></div>
                 </div>
             </div>
@@ -41,6 +46,12 @@
                     <span>1</span>
                 </div>
             </div>
+        </div>
+        <div class="ctrl">
+            <button class="btnUp">↑</button>
+            <button class="btnLeft">←</button>
+            <button class="btnDown">↓</button>
+            <button class="btnRight">→</button>
         </div>
     </body>
 </html>

@@ -1,4 +1,6 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: skyblue;
     box-sizing: border-box;
 
@@ -19,6 +21,34 @@ body {
             border: black 2px solid;
             margin: 30px auto;
             border-radius: 10px;
+            .startMask {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+                background-color: #b7d4a8;
+                border-radius: 10px;
+                text-align: center;
+                .title {
+                    padding-top: 50px;
+                }
+                .startBtn {
+                    border-radius: 20px;
+                }
+            }
+            .gameOverMask {
+                display: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 999;
+                background-color: #b7d4a8;
+                border-radius: 10px;
+                text-align: center;
+                .title {
+                    padding-top: 50px;
+                }
+            }
             .snake {
                 position: absolute;
 
@@ -27,7 +57,12 @@ body {
                     width: 10px;
                     height: 10px;
                     border: #b7d4a8 2px solid;
-                    background-color: #000;
+                    background-color: rgb(15, 166, 90);
+                    &:first-child {
+                        background-color: rgb(7, 158, 47);
+                        border-radius: 50%;
+                        border: rgb(255, 255, 255) 2px dotted;
+                    }
                 }
             }
             .food {
@@ -53,6 +88,43 @@ body {
         .score-panel {
             display: flex;
             justify-content: space-around;
+        }
+    }
+    .ctrl {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(56, 162, 194);
+        position: relative;
+        border-radius: 50%;
+        button {
+            font-size: 30px;
+            font-weight: bold;
+            background-color: rgb(123, 177, 31);
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .btnUp {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btnLeft {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .btnDown {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btnRight {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }
