@@ -3,6 +3,7 @@ const path = require("path");
 const htmlPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
+    devtool: "source-map",
     // 入口文件
     entry: "./src/index.ts",
     // 输出设置
@@ -35,7 +36,6 @@ module.exports = {
                                     {
                                         targets: {
                                             chrome: "88",
-                                            ie: 11,
                                         },
                                         corejs: "3",
                                         useBuiltIns: "usage",

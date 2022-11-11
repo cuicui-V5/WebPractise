@@ -11,13 +11,13 @@ export class ScorePanel {
     }
 
     addScore(): void {
-        this.scoreEle.innerText = (this.score += 5).toString();
-        if (this.score % 10 == 0) {
+        this.scoreEle.innerText = (this.score += 2).toString();
+        if (this.score % 4 == 0) {
             this.addLevel();
         }
     }
     private addLevel(): void {
-        if (this.level < 10) {
+        if (this.level < 20) {
             this.levelEle.innerText = (++this.level).toString();
         }
     }
