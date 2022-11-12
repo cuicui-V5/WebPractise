@@ -63,7 +63,7 @@ export class Snake {
                     element.offsetLeft == this.head.offsetLeft &&
                     element.offsetTop == this.head.offsetTop
                 ) {
-                    alert("你把自己给吃了");
+                    this.snakeEle.remove();
                     this.gameOver();
                 }
             }
