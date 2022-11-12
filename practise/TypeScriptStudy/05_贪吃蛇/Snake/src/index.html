@@ -3,14 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta
-            http-equiv="X-UA-Compatible"
-            content="IE=edge"
-        />
-        <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
         />
         <title>贪吃蛇</title>
+        <link
+            rel="shortcut icon"
+            href="favicon.ico"
+            type="image/x-icon"
+        />
     </head>
     <body>
         <!-- 游戏主窗口 -->
@@ -26,12 +27,12 @@
 
                     <button class="gameOverBtn">Restart</button>
                     <br />
-                    <label for="user">请输入昵称</label>
+                    <label for="user">留下大名</label>
                     <input
                         type=""
                         id="user"
                     />
-                    <button>提交成绩</button>
+                    <button class="submitBtn">名垂青史</button>
                 </div>
                 <div class="food">
                     <div></div>
@@ -59,12 +60,16 @@
                     <span>1</span>
                 </div>
             </div>
-        </div>
-        <div class="ctrl">
-            <button class="btnUp">↑</button>
-            <button class="btnLeft">←</button>
-            <button class="btnDown">↓</button>
-            <button class="btnRight">→</button>
+            <div class="rank">
+                <span class="title">高分榜</span>
+                <ul class="rankShowArea"></ul>
+            </div>
+            <div class="ctrl">
+                <button class="btnUp">↑</button>
+                <button class="btnLeft">←</button>
+                <button class="btnDown">↓</button>
+                <button class="btnRight">→</button>
+            </div>
         </div>
     </body>
 </html>

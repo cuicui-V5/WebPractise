@@ -7,12 +7,15 @@ export class Snake {
     // 整个蛇
     snakeEle: HTMLDivElement;
     gameOverMask: HTMLElement;
-
+    ctrl: HTMLElement;
+    rank: HTMLElement;
     constructor() {
         this.snakeEle = document.querySelector(".snake")!;
         this.head = this.snakeEle.querySelector("div")!;
         this.bodies = this.snakeEle.getElementsByTagName("div");
         this.gameOverMask = document.querySelector(".gameOverMask")!;
+        this.ctrl = document.querySelector(".ctrl")!;
+        this.rank = document.querySelector(".rank")!;
     }
 
     getPos(): Position {
@@ -60,7 +63,7 @@ export class Snake {
                     element.offsetLeft == this.head.offsetLeft &&
                     element.offsetTop == this.head.offsetTop
                 ) {
-                    alert("游戏结束");
+                    alert("你把自己给吃了");
                     this.gameOver();
                 }
             }
@@ -68,5 +71,7 @@ export class Snake {
     }
     gameOver() {
         this.gameOverMask.style.display = "block";
+        this.ctrl.style.display = "none";
+        this.rank.style.display = "block";
     }
 }

@@ -8,7 +8,7 @@ export class GameController {
     moveTimer: any;
     countdownIntervalTimer: any;
 
-    timeout = 11;
+    timeout = 16;
     showCountdown: HTMLElement;
 
     food: Food;
@@ -132,7 +132,7 @@ export class GameController {
             pos.x === this.food.getPosition().x &&
             pos.y === this.food.getPosition().y
         ) {
-            this.timeout += 3;
+            this.timeout += 2 * (this.scorePanel.level / 2 + 3);
             this.scorePanel.addScore();
             this.food.randomBorn();
             this.snake.addBody();
@@ -142,7 +142,7 @@ export class GameController {
         if (this.isAlive) {
             this.moveTimer = setTimeout(() => {
                 this.snakeMove();
-            }, 200 - this.scorePanel.level * 18);
+            }, 200 - this.scorePanel.level * 10);
         }
     }
     btnCtrl(): void {

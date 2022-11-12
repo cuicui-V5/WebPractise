@@ -67,6 +67,7 @@ module.exports = {
     plugins: [
         new htmlPlugin({
             template: "./src/index.html",
+            favicon: "./src/favicon.ico", //favicon路径
         }),
         new CleanWebpackPlugin(),
     ],
