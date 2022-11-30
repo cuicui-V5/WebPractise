@@ -1,0 +1,116 @@
+<template>
+    <div class="about">
+        <!-- echarts的容器, 必须设置宽高, 否则不显示 -->
+        <div
+            class="echarts"
+            ref="ec"
+        ></div>
+    </div>
+</template>
+<script lang="ts" setup>
+    // 引入echarts
+    import * as echarts from "echarts/core";
+    import { BarChart } from "echarts/charts";
+    import { ref, onMounted } from "vue";
+    const ec = ref<HTMLElement | null>(null);
+    onMounted(() => {
+        console.log("111");
+        console.log(ec.value);
+
+        if (ec.value != null) {
+            const myEcharts = echarts.init(ec.value);
+            const option: echarts.EChartsOption = {
+                // 设置参数
+                // 标题
+                title: {
+                    // 主标题与副标题
+                    text: "主标题",
+                    subtext: "这里是副标题",
+
+                    // 主副标题的链接
+                    link: "http://baidu.com",
+                    sublink: "http://jd.com",
+
+                    // 链接打开方式
+                    target: "self",
+                    subtarget: "self",
+
+                    // 标题区域的样式
+                    backgroundColor: "skyblue",
+
+                    // 主副标题文本样式
+                    textStyle: {
+                        color: "red",
+                        fontSize: "30",
+                    },
+                    subtextStyle: {
+                        color: "#00bd7e",
+                        fontSize: "20",
+                    },
+                },
+                // 提示框
+                tooltip: {
+                    // 触发方式
+                    trigger: "axis", // item 只有在图形上才会触发, axis在范围内都会触发
+                    // 坐标轴指示器
+                    axisPointer: {
+                        type: "line", // line 线, shadow 阴影, cross , 十字线准星效果
+                    },
+                    showContent: true, // 是否显示悬浮弹窗
+                    // 提示框样式
+                    backgroundColor: "pink",
+                    textStyle: {
+                        fontSize: "20",
+                    },
+                    // 自定义提示框信息
+                    formatter(params) {
+                        console.log(params.da);
+
+                        return "数据为" + params[0].data.value;
+                    },
+                },
+                xAxis: {
+                    data: [1, 2, 3, 4],
+                },
+                yAxis: {},
+                series: {
+                    name: "测试",
+                    type: "bar",
+                    data: [
+                        {
+                            value: 4,
+                            date: "2022",
+                        },
+                        {
+                            value: 4,
+                            date: "1989",
+                        },
+                        {
+                            value: 2,
+                            date: "1899",
+                        },
+                        {
+                            value: 6,
+                            date: "1984",
+                        },
+                    ],
+                },
+            };
+            myEcharts.setOption(option);
+        }
+    });
+</script>
+
+<style lang="scss">
+    @media (min-width: 1024px) {
+        .about {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .echarts {
+        width: 100%;
+        height: 600px;
+    }
+</style>
