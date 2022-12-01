@@ -14,11 +14,14 @@
         />
 
         <div class="wrapper">
-            <HelloWorld msg="You did it!" />
+            <HelloWorld msg="echarts图表演示" />
 
             <nav>
                 <RouterLink to="/">Home</RouterLink>
-                <RouterLink to="/about">About</RouterLink>
+                <RouterLink to="/bar">柱状图</RouterLink>
+                <RouterLink to="/pie">饼状图</RouterLink>
+                <RouterLink to="/line">折线图</RouterLink>
+                <RouterLink to="/scatter">散点图</RouterLink>
             </nav>
         </div>
     </header>

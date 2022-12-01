@@ -15,6 +15,8 @@
         type BarSeriesOption,
         LineChart,
         type LineSeriesOption,
+        PieChart,
+        type PieSeriesOption,
     } from "echarts/charts";
     import {
         TitleComponent,
@@ -29,6 +31,12 @@
         type DatasetComponentOption,
         // 内置数据转换器组件 (filter, sort)
         TransformComponent,
+        type LegendComponentOption,
+        LegendComponent,
+        MarkPointComponent,
+        type MarkPointComponentOption,
+        MarkLineComponent,
+        type MarkLineComponentOption,
     } from "echarts/components";
     import { LabelLayout, UniversalTransition } from "echarts/features";
     import { CanvasRenderer } from "echarts/renderers";
@@ -38,23 +46,31 @@
     type ECOption = echarts.ComposeOption<
         | BarSeriesOption
         | LineSeriesOption
+        | PieSeriesOption
         | TitleComponentOption
         | TooltipComponentOption
         | GridComponentOption
         | DatasetComponentOption
+        | LegendComponentOption
+        | MarkPointComponentOption
+        | MarkLineComponentOption
     >;
     // 注册必须的组件
     echarts.use([
         TitleComponent,
         TooltipComponent,
+        LegendComponent,
         GridComponent,
         DatasetComponent,
         TransformComponent,
         BarChart,
         LineChart,
+        PieChart,
         LabelLayout,
         UniversalTransition,
         CanvasRenderer,
+        MarkPointComponent,
+        MarkLineComponent,
     ]);
     const ec = ref<HTMLElement | null>(null);
     onMounted(() => {
@@ -62,40 +78,55 @@
             title: {
                 text: "标题",
                 subtext: "副标题",
-                left: "center",
+                left: "left",
+                top: "left",
             },
-            tooltip: {
-                // 提示框触发方式: item 只有在图形上才会触发, axis在范围内都会触发
-                trigger: "axis",
-                // 坐标轴指示器 line 线, shadow 阴影, cross , 十字线准星效果
-                axisPointer: {
-                    type: "shadow",
-                },
-                // 是否显示提示框
-                showContent: true,
-                // 样式
-                backgroundColor: "pink",
-                textStyle: {
-                    fontSize: "20",
-                },
-                // 内容格式化
-                // formatter: (p) => {
-                //     return "value=" + p;
-                // },
+            tooltip: {},
+            legend: {
+                orient: "vertical",
             },
             xAxis: {
-                data: ["1", "2", "3"],
+                data: [1, 2, 3, 4, 5],
             },
             yAxis: {},
-            series: {
-                name: "test",
-                type: "bar",
-                data: [
-                    { value: 100, name: "123" },
-                    { value: 300, name: "2929-2-1" },
-                    { value: 300, name: "2929-2-1" },
-                ],
-            },
+            series: [
+                {
+                    name: "test",
+                    type: "line", // 折线图
+                    smooth: true, // 开启平滑过渡
+                    areaStyle: {
+                        color: "skyblue",
+                    },
+                    emphasis: {
+                        //选中高亮效果
+                        focus: "series",
+                    },
+                    data: [
+                        { value: 10, name: "吃饭" },
+                        { value: 31, name: "睡觉" },
+                        { value: 30, name: "打飞机" },
+                        { value: 20, name: "玩电脑" },
+                        { value: 21, name: "喝水" },
+                    ],
+                },
+                {
+                    name: "test",
+                    type: "line", // 折线图
+                    smooth: true, // 开启平滑过渡
+                    areaStyle: {},
+                    emphasis: {
+                        //选中高亮效果
+                        focus: "series",
+                    },
+                    data: [
+                        { value: 5, name: "吃饭" },
+                        { value: 20, name: "睡觉" },
+                        { value: 10, name: "打飞机" },
+                        { value: 15, name: "玩电脑" },
+                        { value: 21, name: "喝水" },
+                    ],
+                },
+            ],
         };
         // 接下来的使用就跟之前一样，初始化图表，设置配置项
         if (ec.value !== null) {
