@@ -28,7 +28,23 @@ const router = createRouter({
         },
         {
             path: "/scatter",
-            component: () => import("../views/sctter.vue"),
+            component: () => import("../views/scatter.vue"),
+        },
+        {
+            path: "/candlerStick",
+            component: () => import("../views/candlerStick.vue"),
+        },
+        {
+            path: "/radar",
+            component: () => import("../views/radar.vue"),
+        },
+        {
+            path: "/funnel",
+            component: () => import("../views/Funnel.vue"),
+        },
+        {
+            path: "/gauge",
+            component: () => import("../views/gauge.vue"),
         },
     ],
 });

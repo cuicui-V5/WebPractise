@@ -22,6 +22,10 @@
                 <RouterLink to="/pie">饼状图</RouterLink>
                 <RouterLink to="/line">折线图</RouterLink>
                 <RouterLink to="/scatter">散点图</RouterLink>
+                <RouterLink to="/candlerStick">k线图</RouterLink>
+                <RouterLink to="/radar">雷达图</RouterLink>
+                <RouterLink to="/funnel">漏斗图</RouterLink>
+                <RouterLink to="/gauge">仪表盘</RouterLink>
             </nav>
         </div>
     </header>

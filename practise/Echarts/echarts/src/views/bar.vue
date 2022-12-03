@@ -76,6 +76,13 @@
                 subtext: "副标题",
                 // left: "center",
             },
+            // 控制图表显示区域及样式
+            grid: {
+                show: true,
+                top: "20%",
+                right: "20%",
+                backgroundColor: "skyblue",
+            },
             tooltip: {
                 // 提示框触发方式: item 只有在图形上才会触发, axis在范围内都会触发
                 trigger: "axis",

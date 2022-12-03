@@ -17,6 +17,12 @@
         type LineSeriesOption,
         PieChart,
         type PieSeriesOption,
+        ScatterChart,
+        type ScatterSeriesOption,
+        CandlestickChart,
+        type CandlestickSeriesOption,
+        RadarChart,
+        type RadarSeriesOption,
     } from "echarts/charts";
     import {
         TitleComponent,
@@ -37,6 +43,8 @@
         type MarkPointComponentOption,
         MarkLineComponent,
         type MarkLineComponentOption,
+        RadarComponent,
+        type RadarComponentOption,
     } from "echarts/components";
     import { LabelLayout, UniversalTransition } from "echarts/features";
     import { CanvasRenderer } from "echarts/renderers";
@@ -54,6 +62,10 @@
         | LegendComponentOption
         | MarkPointComponentOption
         | MarkLineComponentOption
+        | ScatterSeriesOption
+        | CandlestickSeriesOption
+        | RadarSeriesOption
+        | RadarComponentOption
     >;
     // 注册必须的组件
     echarts.use([
@@ -65,12 +77,16 @@
         TransformComponent,
         BarChart,
         LineChart,
+        CandlestickChart,
         PieChart,
+        RadarChart,
+        ScatterChart,
         LabelLayout,
         UniversalTransition,
         CanvasRenderer,
         MarkPointComponent,
         MarkLineComponent,
+        RadarComponent,
     ]);
     const ec = ref<HTMLElement | null>(null);
     onMounted(() => {
@@ -81,57 +97,61 @@
                 left: "left",
                 top: "left",
             },
-            tooltip: {
-                trigger: "axis",
-                axisPointer: {
-                    type: "line",
-                },
-            },
-            legend: {
-                orient: "vertical",
-            },
-            xAxis: {
-                data: [1, 2, 3, 4, 5],
-            },
-            yAxis: {},
-            series: [
+            tooltip: {},
+            radar: [
                 {
-                    name: "test",
-                    type: "line", // 折线图
-                    smooth: true, // 开启平滑过渡
-                    areaStyle: {
-                        color: "skyblue",
-                    },
-                    emphasis: {
-                        //选中高亮效果
-                        focus: "series",
-                    },
-                    data: [
-                        { value: 10, name: "吃饭" },
-                        { value: 31, name: "睡觉" },
-                        { value: 30, name: "打飞机" },
-                        { value: 20, name: "玩电脑" },
-                        { value: 21, name: "喝水" },
-                    ],
-                },
-                {
-                    name: "test",
-                    type: "line", // 折线图
-                    smooth: true, // 开启平滑过渡
-                    areaStyle: {},
-                    emphasis: {
-                        //选中高亮效果
-                        focus: "series",
-                    },
-                    data: [
-                        { value: 5, name: "吃饭" },
-                        { value: 20, name: "睡觉" },
-                        { value: 10, name: "打飞机" },
-                        { value: 15, name: "玩电脑" },
-                        { value: 21, name: "喝水" },
+                    // 形状
+                    shape: "polygon",
+                    // 半径
+                    radius: "60%",
+                    // 起始角度
+                    startAngle: 200,
+                    // 分隔数
+                    splitNumber: 10,
+
+                    // 设置维度
+                    indicator: [
+                        {
+                            name: "速度",
+                            // 维度的最大值
+                            max: 5000,
+                        },
+                        {
+                            name: "护甲",
+                            max: 5000,
+                        },
+                        {
+                            name: "生命",
+                            max: 5000,
+                        },
+                        {
+                            name: "速度",
+                            max: 5000,
+                        },
+                        {
+                            name: "护甲",
+                            max: 5000,
+                        },
+                        {
+                            name: "生命",
+                            max: 5000,
+                        },
                     ],
                 },
             ],
+            series: {
+                name: "test",
+                type: "radar",
+                areaStyle: {},
+                data: [
+                    {
+                        value: [3344, 3030, 2432, 1235, 3213, 4321],
+                    },
+                    {
+                        value: [3123, 1224, 213, 3453, 1213, 2221],
+                    },
+                ],
+            },
         };
         // 接下来的使用就跟之前一样，初始化图表，设置配置项
         if (ec.value !== null) {

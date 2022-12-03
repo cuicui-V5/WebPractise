@@ -17,6 +17,14 @@
         type LineSeriesOption,
         PieChart,
         type PieSeriesOption,
+        ScatterChart,
+        type ScatterSeriesOption,
+        CandlestickChart,
+        type CandlestickSeriesOption,
+        RadarChart,
+        type RadarSeriesOption,
+        FunnelChart,
+        type FunnelSeriesOption,
     } from "echarts/charts";
     import {
         TitleComponent,
@@ -37,6 +45,8 @@
         type MarkPointComponentOption,
         MarkLineComponent,
         type MarkLineComponentOption,
+        RadarComponent,
+        type RadarComponentOption,
     } from "echarts/components";
     import { LabelLayout, UniversalTransition } from "echarts/features";
     import { CanvasRenderer } from "echarts/renderers";
@@ -54,6 +64,11 @@
         | LegendComponentOption
         | MarkPointComponentOption
         | MarkLineComponentOption
+        | ScatterSeriesOption
+        | CandlestickSeriesOption
+        | RadarSeriesOption
+        | FunnelSeriesOption
+        | RadarComponentOption
     >;
     // 注册必须的组件
     echarts.use([
@@ -65,12 +80,17 @@
         TransformComponent,
         BarChart,
         LineChart,
+        CandlestickChart,
         PieChart,
+        RadarChart,
+        ScatterChart,
         LabelLayout,
         UniversalTransition,
         CanvasRenderer,
         MarkPointComponent,
         MarkLineComponent,
+        RadarComponent,
+        FunnelChart,
     ]);
     const ec = ref<HTMLElement | null>(null);
     onMounted(() => {
@@ -81,57 +101,28 @@
                 left: "left",
                 top: "left",
             },
-            tooltip: {
-                trigger: "axis",
-                axisPointer: {
-                    type: "line",
+            tooltip: {},
+
+            series: {
+                name: "test",
+                // 漏斗图
+                type: "funnel",
+                data: [
+                    { value: 10, name: "吃饭" },
+                    { value: 31, name: "睡觉" },
+                    { value: 30, name: "打飞机" },
+                    { value: 20, name: "玩电脑" },
+                    { value: 21, name: "喝水" },
+                ],
+                // 排序方式
+                sort: "ascending",
+                emphasis: {
+                    focus: "self",
+                    label: {
+                        fontSize: "30",
+                    },
                 },
             },
-            legend: {
-                orient: "vertical",
-            },
-            xAxis: {
-                data: [1, 2, 3, 4, 5],
-            },
-            yAxis: {},
-            series: [
-                {
-                    name: "test",
-                    type: "line", // 折线图
-                    smooth: true, // 开启平滑过渡
-                    areaStyle: {
-                        color: "skyblue",
-                    },
-                    emphasis: {
-                        //选中高亮效果
-                        focus: "series",
-                    },
-                    data: [
-                        { value: 10, name: "吃饭" },
-                        { value: 31, name: "睡觉" },
-                        { value: 30, name: "打飞机" },
-                        { value: 20, name: "玩电脑" },
-                        { value: 21, name: "喝水" },
-                    ],
-                },
-                {
-                    name: "test",
-                    type: "line", // 折线图
-                    smooth: true, // 开启平滑过渡
-                    areaStyle: {},
-                    emphasis: {
-                        //选中高亮效果
-                        focus: "series",
-                    },
-                    data: [
-                        { value: 5, name: "吃饭" },
-                        { value: 20, name: "睡觉" },
-                        { value: 10, name: "打飞机" },
-                        { value: 15, name: "玩电脑" },
-                        { value: 21, name: "喝水" },
-                    ],
-                },
-            ],
         };
         // 接下来的使用就跟之前一样，初始化图表，设置配置项
         if (ec.value !== null) {

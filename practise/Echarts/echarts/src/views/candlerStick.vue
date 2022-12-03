@@ -17,6 +17,10 @@
         type LineSeriesOption,
         PieChart,
         type PieSeriesOption,
+        ScatterChart,
+        type ScatterSeriesOption,
+        CandlestickChart,
+        type CandlestickSeriesOption,
     } from "echarts/charts";
     import {
         TitleComponent,
@@ -54,6 +58,8 @@
         | LegendComponentOption
         | MarkPointComponentOption
         | MarkLineComponentOption
+        | ScatterSeriesOption
+        | CandlestickSeriesOption
     >;
     // 注册必须的组件
     echarts.use([
@@ -65,7 +71,9 @@
         TransformComponent,
         BarChart,
         LineChart,
+        CandlestickChart,
         PieChart,
+        ScatterChart,
         LabelLayout,
         UniversalTransition,
         CanvasRenderer,
@@ -84,54 +92,29 @@
             tooltip: {
                 trigger: "axis",
                 axisPointer: {
-                    type: "line",
+                    type: "cross",
                 },
-            },
-            legend: {
-                orient: "vertical",
             },
             xAxis: {
-                data: [1, 2, 3, 4, 5],
+                data: [1, 2],
             },
             yAxis: {},
-            series: [
-                {
-                    name: "test",
-                    type: "line", // 折线图
-                    smooth: true, // 开启平滑过渡
-                    areaStyle: {
-                        color: "skyblue",
-                    },
-                    emphasis: {
-                        //选中高亮效果
-                        focus: "series",
-                    },
-                    data: [
-                        { value: 10, name: "吃饭" },
-                        { value: 31, name: "睡觉" },
-                        { value: 30, name: "打飞机" },
-                        { value: 20, name: "玩电脑" },
-                        { value: 21, name: "喝水" },
-                    ],
+            series: {
+                name: "test",
+                type: "candlestick",
+                data: [
+                    // 初值, 终值, 最低值, 最高值
+                    [6, 1, 11, 1],
+                    [2, 4, 6, 1],
+                ],
+                itemStyle: {
+                    color: "skyblue", // 上涨颜色
+                    color0: "green", // 下跌颜色
                 },
-                {
-                    name: "test",
-                    type: "line", // 折线图
-                    smooth: true, // 开启平滑过渡
-                    areaStyle: {},
-                    emphasis: {
-                        //选中高亮效果
-                        focus: "series",
-                    },
-                    data: [
-                        { value: 5, name: "吃饭" },
-                        { value: 20, name: "睡觉" },
-                        { value: 10, name: "打飞机" },
-                        { value: 15, name: "玩电脑" },
-                        { value: 21, name: "喝水" },
-                    ],
+                markPoint: {
+                    data: [{ name: "最da值", type: "max", valueDim: "close" }],
                 },
-            ],
+            },
         };
         // 接下来的使用就跟之前一样，初始化图表，设置配置项
         if (ec.value !== null) {
