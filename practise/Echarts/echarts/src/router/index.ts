@@ -46,6 +46,10 @@ const router = createRouter({
             path: "/gauge",
             component: () => import("../views/gauge.vue"),
         },
+        {
+            path: "/tree",
+            component: () => import("../views/tree.vue"),
+        },
     ],
 });
 

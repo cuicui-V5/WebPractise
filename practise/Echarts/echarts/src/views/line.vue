@@ -19,6 +19,8 @@
         type PieSeriesOption,
     } from "echarts/charts";
     import {
+        DataZoomComponent,
+        type DataZoomComponentOption,
         TitleComponent,
         // 组件类型的定义后缀都为 ComponentOption
         type TitleComponentOption,
@@ -54,6 +56,7 @@
         | LegendComponentOption
         | MarkPointComponentOption
         | MarkLineComponentOption
+        | DataZoomComponentOption
     >;
     // 注册必须的组件
     echarts.use([
@@ -71,6 +74,7 @@
         CanvasRenderer,
         MarkPointComponent,
         MarkLineComponent,
+        DataZoomComponent,
     ]);
     const ec = ref<HTMLElement | null>(null);
     onMounted(() => {
@@ -94,6 +98,18 @@
                 data: [1, 2, 3, 4, 5],
             },
             yAxis: {},
+            dataZoom: [
+                {
+                    type: "slider",
+                    xAxisIndex: 0,
+                    filterMode: "none",
+                },
+                {
+                    type: "slider",
+                    yAxisIndex: 0,
+                    filterMode: "none",
+                },
+            ],
             series: [
                 {
                     name: "test",

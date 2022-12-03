@@ -17,6 +17,8 @@
         type LineSeriesOption,
         PieChart,
         type PieSeriesOption,
+        TreeChart,
+        type TreeSeriesOption,
     } from "echarts/charts";
     import {
         TitleComponent,
@@ -41,7 +43,6 @@
     import { LabelLayout, UniversalTransition } from "echarts/features";
     import { CanvasRenderer } from "echarts/renderers";
     import { ref, onMounted } from "vue";
-    import { shine } from "../assets/shine";
 
     // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
     type ECOption = echarts.ComposeOption<
@@ -55,6 +56,7 @@
         | LegendComponentOption
         | MarkPointComponentOption
         | MarkLineComponentOption
+        | TreeSeriesOption
     >;
     // 注册必须的组件
     echarts.use([
@@ -72,6 +74,7 @@
         CanvasRenderer,
         MarkPointComponent,
         MarkLineComponent,
+        TreeChart,
     ]);
     const ec = ref<HTMLElement | null>(null);
     onMounted(() => {
@@ -88,34 +91,52 @@
             },
             series: {
                 name: "test",
-                type: "pie",
+                type: "tree",
+                // 布局方向
+                orient: "TB",
                 data: [
-                    { value: 10, name: "吃饭" },
-                    { value: 50, name: "睡觉" },
-                    { value: 30, name: "打飞机" },
-                    { value: 20, name: "玩电脑" },
-                    { value: 21, name: "喝水" },
+                    {
+                        name: "root",
+                        children: [
+                            {
+                                name: "1",
+                                children: [
+                                    {
+                                        name: "3",
+                                        collapsed: false,
+                                        children: [
+                                            {
+                                                name: "AgglomerativeCluster",
+                                                value: 3938,
+                                            },
+                                            {
+                                                name: "CommunityStructure",
+                                                value: 3812,
+                                            },
+                                            {
+                                                name: "HierarchicalCluster",
+                                                value: 6714,
+                                            },
+                                            {
+                                                name: "MergeEdge",
+                                                value: 743,
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        name: "4",
+                                    },
+                                ],
+                            },
+                            { name: "2" },
+                        ],
+                    },
                 ],
-
-                // 设置内外半径
-                // 第一个参数表示外圈占容器总宽度的比例,
-                // 第二个参数表示内部空白区域占容器宽度的比例, 第一个参数必须小于第二个参数
-                radius: ["20%", "70%"],
-                // 是否设置成玫瑰图
-                roseType: "area",
-                itemStyle: {
-                    borderRadius: "10",
-                },
-                // 是否显示文本标签
-                label: {
-                    show: true, // 是否显示文本标签
-                    position: "inside",
-                },
             },
         };
         // 接下来的使用就跟之前一样，初始化图表，设置配置项
         if (ec.value !== null) {
-            var myChart = echarts.init(ec.value, shine);
+            var myChart = echarts.init(ec.value, "light");
             myChart.setOption(option);
         }
     });
