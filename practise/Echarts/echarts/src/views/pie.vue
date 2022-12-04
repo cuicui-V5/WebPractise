@@ -91,10 +91,10 @@
                 type: "pie",
                 data: [
                     { value: 10, name: "吃饭" },
-                    { value: 50, name: "睡觉" },
+                    { value: 20, name: "睡觉" },
                     { value: 30, name: "打飞机" },
-                    { value: 20, name: "玩电脑" },
-                    { value: 21, name: "喝水" },
+                    { value: 40, name: "玩电脑" },
+                    { value: 50, name: "喝水" },
                 ],
 
                 // 设置内外半径

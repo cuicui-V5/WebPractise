@@ -27,6 +27,7 @@
                 <RouterLink to="/funnel">漏斗图</RouterLink>
                 <RouterLink to="/gauge">仪表盘</RouterLink>
                 <RouterLink to="/tree">树状图</RouterLink>
+                <RouterLink to="/chinaMap">中国地图</RouterLink>
             </nav>
         </div>
     </header>

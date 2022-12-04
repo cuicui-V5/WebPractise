@@ -50,6 +50,10 @@ const router = createRouter({
             path: "/tree",
             component: () => import("../views/tree.vue"),
         },
+        {
+            path: "/chinaMap",
+            component: () => import("../views/chinaMap.vue"),
+        },
     ],
 });
 

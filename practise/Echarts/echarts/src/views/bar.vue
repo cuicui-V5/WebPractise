@@ -39,6 +39,7 @@
     import { LabelLayout, UniversalTransition } from "echarts/features";
     import { CanvasRenderer } from "echarts/renderers";
     import { ref, onMounted } from "vue";
+    import type { EChartsOption } from "echarts/types/dist/shared";
 
     // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
     type ECOption = echarts.ComposeOption<
@@ -70,7 +71,12 @@
     ]);
     const ec = ref<HTMLElement | null>(null);
     onMounted(() => {
-        const option: ECOption = {
+        const option: EChartsOption = {
+            animation: true, // 是否显示动画
+            animationThreshold: 10, // 动画阈值, 高于此数量不显示动画
+            animationDuration: 2000, //动画持续时间
+            animationDelay: 2000, //动画延迟
+            animationEasing: "linear", //动画曲线
             title: {
                 text: "标题",
                 subtext: "副标题",
@@ -102,6 +108,7 @@
                 //     return "value=" + p;
                 // },
             },
+
             // 图例
             legend: {
                 // 是否显示图例
@@ -118,6 +125,7 @@
                 type: "category", // 类型. 类目轴
                 data: ["1", "2", "3", "4", "5"],
             },
+
             series: {
                 name: "test",
                 type: "bar",

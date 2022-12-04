@@ -1,0 +1,16 @@
+{
+    "data": [
+        { "value": 10, "name": "吃饭" },
+        { "value": 31, "name": "睡觉" },
+        { "value": 30, "name": "打飞机" },
+        { "value": 20, "name": "玩电脑" },
+        { "value": 21, "name": "喝水" }
+    ],
+    "data2": [
+        { "value": 10, "name": "吃饭" },
+        { "value": 31, "name": "睡觉" },
+        { "value": 30, "name": "打飞机" },
+        { "value": 20, "name": "玩电脑" },
+        { "value": 21, "name": "喝水" }
+    ]
+}
