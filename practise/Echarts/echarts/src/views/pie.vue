@@ -117,6 +117,9 @@
         if (ec.value !== null) {
             var myChart = echarts.init(ec.value, shine);
             myChart.setOption(option);
+            myChart.on("click", { name: "喝水" }, (e) => {
+                console.log(e);
+            });
         }
     });
 </script>
