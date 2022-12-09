@@ -5,8 +5,7 @@
     import axios from "axios";
     import { echartsKey, axiosKey } from "./key";
 
-    console.log(echarts);
-
+    axios.defaults.baseURL = "http://127.0.0.1:1234";
     provide(echartsKey, echarts);
     provide(axiosKey, axios);
 </script>

@@ -15,7 +15,7 @@
 <style scoped lang="less">
     .container {
         width: 40vw;
-        height: 40vw;
+        height: 41vw;
         border: 2px solid black;
         margin: 1vw;
     }
