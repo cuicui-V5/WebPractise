@@ -8,6 +8,7 @@
 
 <style scoped lang="less">
     .item {
+        background-color: #bcc5ce5b;
         width: 20vw;
         height: 20vw;
         border: black 2px solid;
