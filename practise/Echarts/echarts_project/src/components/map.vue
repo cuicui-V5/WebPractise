@@ -68,7 +68,7 @@
                     { name: "西安", value: [108.45, 34, 3421] },
                 ],
                 symbolSize: function (data) {
-                    console.log(data);
+                    // console.log(data);
 
                     return Math.sqrt(data[2]) / 3;
                 },
