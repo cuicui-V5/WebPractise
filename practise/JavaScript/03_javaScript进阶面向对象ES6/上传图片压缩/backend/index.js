@@ -23,10 +23,11 @@ const upload = multer({ dest: "uploads/", storage });
 const app = express();
 app.use(cors());
 
-app.post("/upload", upload.single("avatar"), function (req, res) {
+app.post("/upload", upload.single("img"), function (req, res) {
     // req.file 是 `avatar` 文件的信息
     console.log(req.file);
     // req.body 将具有文本域数据，如果存在的话
+    console.log(req.body);
     res.send({
         msg: "ok",
     });
